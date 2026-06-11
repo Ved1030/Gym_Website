@@ -39,7 +39,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <div className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 z-50 flex flex-col gap-3 sm:gap-4 items-end">
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4 items-end">
         <AIAssistant />
         <FloatingWhatsApp />
       </div>

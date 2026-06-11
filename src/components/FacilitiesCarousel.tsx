@@ -88,9 +88,9 @@ const FacilitiesCarousel = () => {
   };
 
   const getCardHeight = () => {
-    if (cardsPerView === 1) return 450;
-    if (cardsPerView === 2) return 550;
-    return 650;
+    if (cardsPerView === 1) return 420;
+    if (cardsPerView === 2) return 480;
+    return 560;
   };
 
   const { scrollYProgress } = useScroll({
@@ -108,10 +108,6 @@ const FacilitiesCarousel = () => {
   });
 
   const smoothX = useSpring(x, { stiffness: 80, damping: 25, restDelta: 0.001 });
-
-  const headingOpacity = useTransform(scrollYProgress, (latest) => {
-    return Math.min(1, Math.max(0, 1 - latest / 0.15));
-  });
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     const cpv = cardsPerViewRef.current;
@@ -147,47 +143,26 @@ const FacilitiesCarousel = () => {
       className="relative"
       style={{ height: `${sectionHeight}vh` }}
     >
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col" style={{ zIndex: 2 }}>
-        <div className="pt-[60px] sm:pt-[80px] lg:pt-[120px] pb-4 sm:pb-6 shrink-0">
-          <motion.div
-            className="text-center mx-auto px-6"
-            style={{ maxWidth: 900, opacity: headingOpacity }}
-          >
-            <p className="text-sm text-red-400 font-semibold tracking-[0.3em] uppercase mb-5">
-              OUR FACILITIES
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
-              The <span className="text-red-500">Ultimate</span> Gym
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-xl">
-              Explore our world-class facilities designed to push your
-              limits.
-            </p>
-          </motion.div>
-        </div>
+      <div className="sticky top-0 h-screen overflow-hidden" style={{ zIndex: 2 }}>
+        <div className="h-full flex flex-col max-w-[1400px] mx-auto px-8">
+          <div className="shrink-0 relative z-10 pt-16 sm:pt-20 lg:pt-24">
+            <div className="text-center">
+              <p className="text-sm text-red-400 font-semibold tracking-[0.3em] uppercase mb-5">
+                OUR FACILITIES
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
+                The <span className="text-red-500">Ultimate</span> Gym
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto text-xl mb-20">
+                Explore our world-class facilities designed to push your limits.
+              </p>
+            </div>
+          </div>
 
-        <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="relative select-none w-full px-6">
-            {currentIndex > 0 && (
-              <button
-                onClick={() => goTo(currentIndex - 1)}
-                className="absolute -left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center hover:bg-red-600 transition-all z-10"
-              >
-                <ChevronLeft size={24} />
-              </button>
-            )}
-            {currentIndex < maxIndex && (
-              <button
-                onClick={() => goTo(currentIndex + 1)}
-                className="absolute -right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center hover:bg-red-600 transition-all z-10"
-              >
-                <ChevronRight size={24} />
-              </button>
-            )}
-
-            <div className="overflow-hidden">
+          <div className="flex-1 min-h-0 relative overflow-hidden" style={{ zIndex: 1 }}>
+            <div className="relative w-full h-full">
               <motion.div
-                className="flex gap-6"
+                className="flex gap-6 h-full items-center"
                 style={{ x: smoothX, cursor: 'grab' }}
               >
                 {facilities.map((f, i) => (
@@ -197,7 +172,7 @@ const FacilitiesCarousel = () => {
                     style={{
                       flex: getCardFlex(),
                       height: getCardHeight(),
-                      maxHeight: cardsPerView === 1 ? 'calc(100dvh - 180px)' : 'none',
+                      maxHeight: getCardHeight(),
                     }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -213,24 +188,60 @@ const FacilitiesCarousel = () => {
                       alt={f.name}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] via-black/30 to-transparent" />
-                    <div className="absolute bottom-12 left-10 right-10 z-10">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.85)] via-transparent to-transparent" />
+                    <div className="absolute bottom-10 left-8 right-8 z-10">
                       <span className="text-sm text-red-400 font-semibold tracking-[0.2em] uppercase block mb-3">
                         {f.zone}
                       </span>
-                      <h3 className="text-4xl md:text-[54px] font-bold font-serif mb-2 leading-[1.1]">
+                      <h3 className="text-4xl md:text-5xl font-bold font-serif mb-2 leading-[1.1]">
                         {f.name}
                       </h3>
-                      <p className="text-xl md:text-2xl text-gray-300 font-light mb-3 leading-snug">
+                      <p className="text-xl text-gray-300 font-light mb-3 leading-snug">
                         {f.subtitle}
                       </p>
-                      <p className="text-base md:text-lg text-gray-400 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-3">
+                      <p className="text-base text-gray-400 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-3">
                         {f.desc}
                       </p>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
+            </div>
+          </div>
+
+          <div className="shrink-0 relative z-10 pb-8 sm:pb-10">
+            <div className="flex items-center justify-center gap-4 sm:gap-6">
+              <button
+                onClick={() => goTo(currentIndex - 1)}
+                disabled={currentIndex === 0}
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <ChevronLeft size={20} />
+                <span className="hidden sm:inline">Previous</span>
+              </button>
+
+              <div className="flex items-center gap-2">
+                {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      i === currentIndex
+                        ? 'bg-red-500 w-6'
+                        : 'bg-white/20 hover:bg-white/40'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => goTo(currentIndex + 1)}
+                disabled={currentIndex >= maxIndex}
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <span className="hidden sm:inline">Next</span>
+                <ChevronRight size={20} />
+              </button>
             </div>
           </div>
         </div>
