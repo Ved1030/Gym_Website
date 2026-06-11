@@ -49,7 +49,7 @@ const facilities = [
     description:
       'One-on-one coaching with certified trainers, custom programs, and dedicated support.',
     image:
-      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 5,
@@ -59,17 +59,17 @@ const facilities = [
     description:
       'Premium steam rooms, sauna facilities, and relaxation areas for post-workout recovery.',
     image:
-      'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&q=80&w=1200',
   },
 ];
 
 export default function GymShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsPerViewRef = useRef(3);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [cardsPerView, setCardsPerView] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  cardsPerViewRef.current = cardsPerView;
+  const [cardHeight, setCardHeight] = useState(650);
+  const [containerW, setContainerW] = useState(1200);
 
   const maxIndex = Math.max(0, facilities.length - cardsPerView);
 
@@ -78,27 +78,40 @@ export default function GymShowcase() {
       if (window.innerWidth < 768) setCardsPerView(1);
       else if (window.innerWidth < 1024) setCardsPerView(2);
       else setCardsPerView(3);
+      const vh = window.innerHeight;
+      if (vh >= 900) setCardHeight(650);
+      else if (vh >= 768) setCardHeight(560);
+      else setCardHeight(460);
     };
     handleResize();
+    if (trackRef.current?.parentElement) {
+      setContainerW(trackRef.current.parentElement.offsetWidth);
+    }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
+    if (trackRef.current?.parentElement) {
+      setContainerW(trackRef.current.parentElement.offsetWidth);
+    }
+  }, [cardsPerView]);
+
+  useEffect(() => {
     setCurrentIndex((prev) => Math.min(prev, maxIndex));
   }, [maxIndex]);
 
-  const getCardFlex = () => {
-    if (cardsPerView === 3) return '0 0 420px';
-    if (cardsPerView === 2) return '0 0 calc((100% - 24px) / 2)';
-    return '0 0 100%';
+  const getCardWidth = () => {
+    if (cardsPerView === 1) return containerW;
+    if (cardsPerView === 2) return 360;
+    return 380;
   };
 
-  const getCardHeight = () => {
-    if (cardsPerView === 1) return 420;
-    if (cardsPerView === 2) return 480;
-    return 560;
-  };
+  const step = (() => {
+    if (cardsPerView === 1) return containerW + 24;
+    if (cardsPerView === 2) return 384;
+    return 404;
+  })();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -106,24 +119,21 @@ export default function GymShowcase() {
   });
 
   const x = useTransform(scrollYProgress, (latest) => {
-    const cpv = cardsPerViewRef.current;
-    const effectiveMax = Math.max(0, facilities.length - cpv);
+    const effectiveMax = Math.max(0, facilities.length - (cardsPerView || 3));
     if (effectiveMax === 0) return 0;
-    const step = cpv === 3 ? 444 : cpv === 2 ? Math.round((window.innerWidth - 72) / 2) : window.innerWidth - 48;
-    const adjusted = Math.min(1, Math.max(0, (latest - 0.15) / 0.7));
+    const adjusted = Math.min(1, Math.max(0, (latest - 0.08) / 0.84));
     return -(adjusted * effectiveMax * step);
   });
 
   const smoothX = useSpring(x, { stiffness: 80, damping: 25, restDelta: 0.001 });
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    const cpv = cardsPerViewRef.current;
-    const effectiveMax = Math.max(0, facilities.length - cpv);
+    const effectiveMax = Math.max(0, facilities.length - (cardsPerView || 3));
     if (effectiveMax === 0) {
       setCurrentIndex(0);
       return;
     }
-    const adjusted = Math.min(1, Math.max(0, (latest - 0.15) / 0.7));
+    const adjusted = Math.min(1, Math.max(0, (latest - 0.08) / 0.84));
     const idx = Math.round(adjusted * effectiveMax);
     setCurrentIndex(Math.max(0, Math.min(idx, effectiveMax)));
   });
@@ -133,16 +143,15 @@ export default function GymShowcase() {
       const target = Math.max(0, Math.min(index, maxIndex));
       if (!sectionRef.current || maxIndex === 0) return;
       const sectionTop = sectionRef.current.offsetTop;
-      const scrollable =
-        sectionRef.current.offsetHeight - window.innerHeight;
-      const targetScroll =
-        sectionTop + (target / maxIndex) * scrollable;
+      const scrollable = sectionRef.current.offsetHeight - window.innerHeight;
+      const targetScroll = sectionTop + (target / maxIndex) * scrollable;
       window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     },
     [maxIndex]
   );
 
-  const sectionHeight = (maxIndex + 1) * 100;
+  const sectionHeight = (maxIndex + 1) * 100 + 60;
+  const cardWidth = getCardWidth();
 
   return (
     <section
@@ -150,74 +159,109 @@ export default function GymShowcase() {
       className="relative"
       style={{ height: `${sectionHeight}vh` }}
     >
-      <div className="sticky top-0 h-screen overflow-hidden" style={{ zIndex: 2 }}>
-        <div className="h-full flex flex-col max-w-[1400px] mx-auto px-8">
-          <div className="shrink-0 relative z-10 pt-16 sm:pt-20 lg:pt-24">
-            <div className="text-center">
-              <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase mb-5 block">
-                OUR FACILITIES
-              </span>
-              <h2 className="heading-lg mb-6 text-balance">
-                The <span className="text-gradient">Ultimate</span> Gym
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-20">
-                Explore our world-class facilities designed to push your limits.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 min-h-0 relative overflow-hidden" style={{ zIndex: 1 }}>
-            <div className="relative w-full h-full">
-              <motion.div
-                className="flex gap-6 h-full items-center"
-                style={{ x: smoothX, cursor: 'grab' }}
+      <div
+        className="sticky top-0 h-screen overflow-hidden bg-background"
+        style={{ zIndex: 2, transform: 'translateZ(0)' }}
+      >
+        <div className="h-full w-full flex flex-col items-center justify-center px-6 sm:px-10">
+          <div className="w-full max-w-[1800px] flex flex-col">
+            <div className="shrink-0 text-center mb-8 sm:mb-10 lg:mb-12">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-primary text-sm font-medium tracking-[0.3em] uppercase"
               >
-                {facilities.map((f, i) => (
-                  <motion.div
-                    key={f.id}
-                    className="group relative flex-shrink-0 overflow-hidden rounded-3xl"
-                    style={{
-                      flex: getCardFlex(),
-                      height: getCardHeight(),
-                      maxHeight: getCardHeight(),
-                    }}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: i * 0.1,
-                      ease: 'easeOut',
-                    }}
-                    whileHover={{ y: -8 }}
-                  >
-                    <img
-                      src={f.image}
-                      alt={f.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.85)] via-transparent to-transparent" />
-                    <div className="absolute bottom-10 left-8 right-8 z-10">
-                      <span className="text-sm text-primary font-semibold tracking-[0.2em] uppercase block mb-3">
-                        {f.zone}
-                      </span>
-                      <h3 className="text-4xl md:text-5xl font-bold font-serif mb-2 leading-[1.1]">
-                        {f.name}
-                      </h3>
-                      <p className="text-xl text-muted-foreground font-light mb-3 leading-snug">
-                        {f.subtitle}
-                      </p>
-                      <p className="text-base text-muted-foreground/80 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-3">
-                        {f.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+                OUR FACILITIES
+              </motion.span>
+              <div className="h-5" />
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="heading-lg text-balance"
+              >
+                The <span className="text-gradient">Ultimate</span> Gym
+              </motion.h2>
+              <div className="h-6" />
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-muted-foreground max-w-2xl mx-auto"
+              >
+                Explore our world-class facilities designed to push your limits.
+              </motion.p>
             </div>
-          </div>
 
-          <div className="shrink-0 relative z-10 pb-8 sm:pb-10">
-            <div className="flex items-center justify-center gap-4 sm:gap-6">
+            <div className="relative w-full flex-1 min-h-0">
+              <div
+                className="relative w-full h-full overflow-hidden rounded-[28px]"
+                style={{ height: cardHeight }}
+              >
+                <motion.div
+                  ref={trackRef}
+                  className="flex gap-6 h-full items-end sm:items-center"
+                  style={{ x: smoothX, cursor: 'grab' }}
+                >
+                  {facilities.map((f, i) => (
+                    <motion.div
+                      key={f.id}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.1 }}
+                      className="group relative flex-shrink-0 overflow-hidden rounded-[28px] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-[0_24px_80px_rgba(0,0,0,0.6)]"
+                      style={{
+                        width: cardWidth,
+                        height: cardHeight,
+                      }}
+                    >
+                      <img
+                        src={f.image}
+                        alt={f.name}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105"
+                      />
+
+                      <div
+                        className="absolute inset-0 transition-opacity duration-300"
+                        style={{
+                          background:
+                            'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 60%, transparent 100%)',
+                        }}
+                      />
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{
+                          background:
+                            'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)',
+                        }}
+                      />
+
+                      <div className="absolute bottom-[40px] left-[32px] right-[32px] z-10">
+                        <span className="text-base text-primary font-semibold tracking-[0.2em] uppercase block mb-4">
+                          {f.zone}
+                        </span>
+                        <h3 className="md:text-[48px] text-4xl font-bold font-serif mb-4 leading-[1.1]">
+                          {f.name}
+                        </h3>
+                        <p className="text-xl text-muted-foreground font-light mb-5 leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                          {f.subtitle}
+                        </p>
+                        <p className="text-base text-muted-foreground/80 leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                          {f.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+
+            <div className="shrink-0 flex items-center justify-center gap-6 pt-6 sm:pt-8">
               <button
                 onClick={() => goTo(currentIndex - 1)}
                 disabled={currentIndex === 0}

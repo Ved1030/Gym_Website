@@ -1,11 +1,34 @@
 'use client';
 
-import { Dumbbell, MapPin, Phone, Mail, Clock, ArrowUp } from 'lucide-react';
+import { Dumbbell, MapPin, Phone, Mail, Clock, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
+
+const XIcon = ({ size, className }: { size?: number; className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 4l16 16M20 4l-16 16" />
+  </svg>
+);
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const socialLinks = [
+    { name: 'Instagram', icon: Instagram, href: '' },
+    { name: 'Facebook', icon: Facebook, href: '' },
+    { name: 'YouTube', icon: Youtube, href: '' },
+    { name: 'X', icon: XIcon, href: '' },
+  ];
 
   return (
     <footer className="relative border-t border-white/10 bg-background">
@@ -78,15 +101,17 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               Stay connected on social media for fitness tips, transformations, and updates.
             </p>
-              <div className="flex gap-3">
-                {['Instagram', 'Facebook', 'YouTube', 'Twitter'].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="glass rounded-lg p-3 text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
-                    aria-label={platform}
-                  >
-                  <span className="text-xs font-medium">{platform[0]}</span>
+            <div className="flex gap-4">
+              {socialLinks.map(({ name, icon: Icon, href }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 rounded-[14px] bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-red-500/20 hover:text-white hover:scale-[1.08] hover:shadow-[0_0_20px_rgba(255,59,59,0.35)] transition-all duration-300"
+                  aria-label={name}
+                >
+                  <Icon size={20} />
                 </a>
               ))}
             </div>

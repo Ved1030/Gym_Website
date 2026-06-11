@@ -141,7 +141,7 @@ const Home = () => {
         href="https://wa.me/919876543210" 
         target="_blank" 
         rel="noreferrer"
-        className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 animate-bounce"
+        className="fixed bottom-[32px] right-[24px] w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 animate-bounce"
       >
         <MessageCircle size={32} className="text-white" />
       </a>
