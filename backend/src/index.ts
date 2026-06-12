@@ -7,8 +7,15 @@ console.log(`Server starting on port ${config.port}`);
 
 const app = express();
 
+const allowedOrigins = config.frontendUrl.split(',').map(s => s.trim()).filter(Boolean);
 app.use(cors({
-  origin: config.frontendUrl,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.some(o => origin.startsWith(o))) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
