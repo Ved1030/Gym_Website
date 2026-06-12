@@ -2,16 +2,29 @@ import axios from 'axios';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
 
+console.log('[API] Base URL configured as:', API_BASE);
+
 export const api = axios.create({
   baseURL: API_BASE,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' },
 });
 
+api.interceptors.request.use((req) => {
+  console.log('[API] Request:', req.method?.toUpperCase(), req.baseURL + req.url);
+  return req;
+});
+
 api.interceptors.response.use(
-  (res) => res,
+  (res) => {
+    console.log('[API] Response:', res.status, res.config.url);
+    return res;
+  },
   (err) => {
-    const message = err.response?.data?.error || err.message || 'Something went wrong';
+    const status = err.response?.status;
+    const body = err.response?.data;
+    console.error('[API] Error:', status, err.config?.url, JSON.stringify(body));
+    const message = body?.error || body?.message || err.message || 'Something went wrong';
     return Promise.reject(new Error(message));
   }
 );

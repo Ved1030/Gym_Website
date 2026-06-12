@@ -122,15 +122,20 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
     setLoading(true);
 
     try {
+      const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001'}/api/chat`;
+      console.log('[Chat] Sending to:', url, { message: content });
       const res = await api.post('/api/chat', { message: content });
+      console.log('[Chat] Response:', res.status, JSON.stringify(res.data).slice(0, 200));
       const reply: Message = { role: 'assistant', content: res.data.response, timestamp: new Date() };
       setMessages((prev) => [...prev, reply]);
-    } catch {
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      console.error('[Chat] Failed:', errorMsg);
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: "Sorry, I'm having trouble connecting. Please WhatsApp us at +91 98765 43210 for immediate assistance.",
+          content: `Error: ${errorMsg}`,
           timestamp: new Date(),
         },
       ]);
