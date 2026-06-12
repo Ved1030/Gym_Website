@@ -3,6 +3,8 @@ import cors from 'cors';
 import routes from './routes';
 import { config } from './config';
 
+console.log(`Server starting on port ${config.port}`);
+
 const app = express();
 
 app.use(cors({

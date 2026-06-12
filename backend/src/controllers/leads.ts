@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { prisma } from '../utils/prisma';
+
+const leads: Array<{ id: string; name: string; email: string; phone: string; goal?: string; source: string; status: string; createdAt: Date }> = [];
 
 export const createLead = async (req: Request, res: Response) => {
   try {
     const { name, email, phone, goal } = req.body;
-    const lead = await prisma.lead.create({
-      data: { name, email, phone, goal, source: 'website' },
-    });
+    const lead = { id: String(Date.now()), name, email, phone, goal, source: 'website', status: 'NEW', createdAt: new Date() };
+    leads.push(lead);
     res.status(201).json({ message: 'Lead captured successfully', data: lead });
   } catch (error) {
     console.error('Lead error:', error);
@@ -16,8 +16,7 @@ export const createLead = async (req: Request, res: Response) => {
 
 export const getLeads = async (_req: Request, res: Response) => {
   try {
-    const leads = await prisma.lead.findMany({ orderBy: { createdAt: 'desc' } });
-    res.json({ data: leads });
+    res.json({ data: leads.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime()) });
   } catch (error) {
     console.error('Get leads error:', error);
     res.status(500).json({ error: 'Failed to fetch leads' });
@@ -26,7 +25,6 @@ export const getLeads = async (_req: Request, res: Response) => {
 
 export const exportLeads = async (_req: Request, res: Response) => {
   try {
-    const leads = await prisma.lead.findMany({ orderBy: { createdAt: 'desc' } });
     const csv = [
       'Name,Email,Phone,Goal,Source,Status,CreatedAt',
       ...leads.map((l) =>

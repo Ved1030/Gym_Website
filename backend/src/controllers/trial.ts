@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { prisma } from '../utils/prisma';
+
+const trials: Array<{ id: string; name: string; email: string; phone: string; goal?: string; source: string; createdAt: Date }> = [];
 
 export const createTrial = async (req: Request, res: Response) => {
   try {
     const { name, email, phone, goal } = req.body;
-    const lead = await prisma.lead.create({
-      data: { name, email, phone, goal, source: 'trial' },
-    });
+    const lead = { id: String(Date.now()), name, email, phone, goal, source: 'trial', createdAt: new Date() };
+    trials.push(lead);
     res.status(201).json({ message: 'Trial registered successfully', data: lead });
   } catch (error) {
     console.error('Trial error:', error);

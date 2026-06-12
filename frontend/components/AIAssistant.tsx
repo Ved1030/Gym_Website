@@ -43,10 +43,6 @@ function formatTime(date: Date) {
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
-function generateSessionId() {
-  return `session_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
-}
-
 function getCTAs(content: string) {
   const lower = content.toLowerCase();
   const ctas: { label: string; action: string; href?: string }[] = [];
@@ -87,8 +83,8 @@ function ChatHeader() {
   );
 }
 
-function formatMessage(text: string) {
-  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>');
+function formatMessage(text: string | null) {
+  return (text || '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>');
 }
 
 interface ChatPanelProps {
@@ -106,7 +102,6 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [sessionId] = useState(generateSessionId);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -127,8 +122,8 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
     setLoading(true);
 
     try {
-      const res = await api.post('/api/chat', { message: content, sessionId });
-      const reply: Message = { role: 'assistant', content: res.data.reply, timestamp: new Date() };
+      const res = await api.post('/api/chat', { message: content });
+      const reply: Message = { role: 'assistant', content: res.data.response, timestamp: new Date() };
       setMessages((prev) => [...prev, reply]);
     } catch {
       setMessages((prev) => [
@@ -145,7 +140,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
   };
 
   const lastAssistantMsg = messages.filter((m) => m.role === 'assistant').pop();
-  const ctas = lastAssistantMsg ? getCTAs(lastAssistantMsg.content) : [];
+  const ctas = lastAssistantMsg?.content ? getCTAs(lastAssistantMsg.content) : [];
 
   return (
     <div className="flex flex-col h-full">

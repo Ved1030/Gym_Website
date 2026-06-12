@@ -8,7 +8,7 @@ import { getTrainers, createTrainer, updateTrainer, deleteTrainer } from '../con
 import { getGallery, createTransformation, updateTransformation, deleteTransformation } from '../controllers/gallery';
 import { getReviews } from '../controllers/reviews';
 import { login, register } from '../controllers/auth';
-import { chat, getChatHistory } from '../controllers/chat';
+import { chat } from '../controllers/chat';
 import { validate } from '../middleware/validate';
 import { authenticate, requireAdmin } from '../middleware/auth';
 import {
@@ -35,7 +35,6 @@ router.post('/api/auth/login', validate(loginSchema), login);
 router.post('/api/auth/register', validate(loginSchema), register);
 
 router.post('/api/chat', chat);
-router.get('/api/chat/:sessionId', getChatHistory);
 
 router.get('/api/admin/contacts', authenticate, requireAdmin, getContacts);
 router.get('/api/admin/leads', authenticate, requireAdmin, getLeads);

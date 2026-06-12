@@ -17,5 +17,5 @@ export const config = {
     user: process.env.SMTP_USER || '',
     pass: process.env.SMTP_PASS || '',
   },
-  openaiApiKey: process.env.OPENAI_API_KEY || '',
+  sarvamApiKey: process.env.SARVAM_API_KEY || '',
 };
