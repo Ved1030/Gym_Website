@@ -27,6 +27,16 @@ export default function Home() {
 
   return (
     <>
+      <div style={{
+        background: 'red',
+        color: 'white',
+        padding: '20px',
+        fontSize: '32px',
+        fontWeight: 'bold',
+        textAlign: 'center'
+      }}>
+      TEST DEPLOY WORKING
+      </div>
       <Navigation />
       <main>
         <CinematicHero />
