@@ -19,7 +19,7 @@ const facilities = [
     description:
       'Heavy free weights, squat racks, deadlift platforms, bench press areas, and professional strength athletes.',
     image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ const facilities = [
     description:
       'Premium steam rooms, sauna facilities, and relaxation areas for post-workout recovery.',
     image:
-      'https://images.unsplash.com/photo-1562778612-e1e0cda9915c?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=1200',
   },
 ];
 

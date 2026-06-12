@@ -54,14 +54,17 @@ export default function MembershipPlans() {
   };
 
   return (
-    <section id="plans" className="section-padding relative">
+    <section id="plans" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+
       <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase">
             Pricing
@@ -93,33 +96,36 @@ export default function MembershipPlans() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-center">
-          {plans.map((plan, index) => {
-            const isCenter = index === 1;
-            return (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                layout
-                style={{ transform: isCenter ? 'scale(1.05)' : 'scale(0.95)' }}
-                className={`relative rounded-2xl p-8 transition-all duration-500 ${
-                  plan.popular
-                    ? 'bg-gradient-to-b from-primary/10 to-transparent border-2 border-primary/40 shadow-[0_0_30px_rgba(255,59,59,0.2)]'
-                    : 'glass border border-white/10 hover:border-primary/30'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-semibold px-5 py-1.5 rounded-full neon-glow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {plans.map((plan, index) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              layout
+              className={`relative flex flex-col rounded-2xl border transition-all duration-300 h-[560px] ${
+                plan.popular
+                  ? 'border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_40px_rgba(255,59,59,0.15)]'
+                  : 'border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]'
+              } hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,59,59,0.1)]`}
+              style={plan.popular ? { transform: 'scale(1.03)' } : undefined}
+            >
+              {plan.popular && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+                  <div className="bg-primary text-primary-foreground text-[11px] font-semibold px-5 py-1.5 rounded-full shadow-[0_0_20px_rgba(255,59,59,0.4)]">
                     Best Value
                   </div>
-                )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{plan.description}</p>
-                  <div className="mt-6">
+                </div>
+              )}
+
+              <div className="flex flex-col flex-1 p-8">
+                <div className="text-center">
+                  <h3 className="text-xl font-bold tracking-tight">{plan.name}</h3>
+                  <p className="text-sm text-muted-foreground/70 mt-1">{plan.description}</p>
+
+                  <div className="mt-6 mb-6">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={billing}
@@ -127,38 +133,42 @@ export default function MembershipPlans() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                       >
-                        <span className="text-5xl font-bold">₹{getPrice(plan).toLocaleString()}</span>
-                        <span className="text-muted-foreground text-sm ml-1">{getLabel()}</span>
+                        <span className="text-4xl font-bold tracking-tight">
+                          ₹{getPrice(plan).toLocaleString()}
+                        </span>
+                        <span className="text-muted-foreground/60 text-sm ml-1">{getLabel()}</span>
                       </motion.div>
                     </AnimatePresence>
                   </div>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
                       <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                      <span className="text-muted-foreground">{feature}</span>
+                      <span className="text-muted-foreground leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <a href="#trial">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all ${
-                      plan.popular
-                        ? 'bg-primary text-primary-foreground neon-glow-sm'
-                        : 'glass hover:bg-white/5 text-foreground'
-                    }`}
-                  >
-                    Get Started <ArrowRight className="h-4 w-4" />
-                  </motion.button>
-                </a>
-              </motion.div>
-            );
-          })}
+                <div className="mt-auto pt-6">
+                  <a href="#trial" className="block">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`w-full py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${
+                        plan.popular
+                          ? 'bg-primary text-primary-foreground shadow-[0_0_20px_rgba(255,59,59,0.3)] hover:shadow-[0_0_30px_rgba(255,59,59,0.5)]'
+                          : 'bg-white/[0.06] text-foreground hover:bg-white/[0.10] border border-white/[0.08]'
+                      }`}
+                    >
+                      Get Started <ArrowRight className="h-4 w-4" />
+                    </motion.button>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

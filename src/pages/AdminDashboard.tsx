@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000', timeout: 10000 });
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+const API = axios.create({ baseURL: API_URL, timeout: 10000 });
 
 export default function AdminDashboard() {
   const [token, setToken] = useState(localStorage.getItem('admin_token'));
