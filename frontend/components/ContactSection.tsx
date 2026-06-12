@@ -33,7 +33,7 @@ export default function ContactSection() {
           >
             <div className="glass-strong rounded-2xl overflow-hidden h-64 border border-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0!2d72.908!3d19.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA0JzQwLjgiTiA3MsKwNTQnMjguOCJF!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.282!2d72.908!3d19.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c5b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sGhatkopar%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(0.9) hue-rotate(180deg)' }}

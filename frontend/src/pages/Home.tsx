@@ -1,0 +1,36 @@
+import Navigation from '@/components/Navigation';
+import CinematicHero from '@/components/CinematicHero';
+import GymShowcase from '@/components/GymShowcase';
+import Transformations from '@/components/Transformations';
+import TrainersSection from '@/components/TrainersSection';
+import MembershipPlans from '@/components/MembershipPlans';
+import VideoTestimonials from '@/components/VideoTestimonials';
+import TrialCTA from '@/components/TrialCTA';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import AIAssistant from '@/components/AIAssistant';
+import PageLoader from '@/components/PageLoader';
+
+export default function Home() {
+  return (
+    <>
+      <Navigation />
+      <main>
+        <CinematicHero />
+        <GymShowcase />
+        <Transformations />
+        <TrainersSection />
+        <MembershipPlans />
+        <VideoTestimonials />
+        <TrialCTA />
+        <ContactSection />
+      </main>
+      <Footer />
+      <div className="fixed bottom-[32px] right-[24px] z-50 flex flex-col gap-[16px] items-end">
+        <AIAssistant />
+        <FloatingWhatsApp />
+      </div>
+    </>
+  );
+}

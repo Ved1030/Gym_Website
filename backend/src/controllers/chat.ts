@@ -85,7 +85,6 @@ export const chat = async (req: Request, res: Response) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${config.sarvamApiKey}`,
           'api-subscription-key': config.sarvamApiKey,
         },
         body: JSON.stringify({
@@ -93,7 +92,6 @@ export const chat = async (req: Request, res: Response) => {
           messages,
           max_tokens: 800,
           temperature: 0.7,
-          reasoning_effort: null,
         }),
         signal: controller.signal,
       });

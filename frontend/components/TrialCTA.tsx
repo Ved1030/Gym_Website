@@ -6,7 +6,7 @@ import { ArrowRight, Loader2, Check, Dumbbell } from 'lucide-react';
 import { trialApi } from '@/services/api';
 
 export default function TrialCTA() {
-  const [form, setForm] = useState({ name: '', phone: '', goal: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', goal: '' });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -16,7 +16,7 @@ export default function TrialCTA() {
     setSubmitting(true);
     setError('');
     try {
-      await trialApi({ ...form, email: `${form.phone}@trial.gloriousfitness.com` });
+      await trialApi({ ...form });
       setSuccess(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');
@@ -111,6 +111,17 @@ export default function TrialCTA() {
                   placeholder="Enter your name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  required
+                  className="w-full h-12 px-4 rounded-xl bg-background/50 border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30 text-foreground placeholder:text-muted-foreground/50 transition-all"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Email</label>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
                   className="w-full h-12 px-4 rounded-xl bg-background/50 border border-white/10 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30 text-foreground placeholder:text-muted-foreground/50 transition-all"
                 />

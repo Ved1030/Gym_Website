@@ -96,8 +96,8 @@ export default function TrainersSection() {
 
                 <motion.div
                   initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
                   animate={{ opacity: touchedIndex === index ? 1 : 0 }}
+                  whileHover={{ opacity: 1 }}
                   className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40 p-6 flex flex-col justify-end sm:flex"
                 >
                   <h3 className="text-xl font-bold text-white mb-1">{trainer.name}</h3>

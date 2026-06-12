@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -54,7 +52,7 @@ function renderTable(columns: string[], rows: any[]) {
   );
 }
 
-export default function AdminPage() {
+export default function AdminDashboard() {
   const [auth, setAuth] = useState<AdminState | null>(null);
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [loginError, setLoginError] = useState('');

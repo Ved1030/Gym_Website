@@ -24,10 +24,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: '' },
-    { name: 'Facebook', icon: Facebook, href: '' },
-    { name: 'YouTube', icon: Youtube, href: '' },
-    { name: 'X', icon: XIcon, href: '' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/gloriousfitness' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/gloriousfitness' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@gloriousfitness' },
+    { name: 'X', icon: XIcon, href: 'https://x.com/gloriousfitness' },
   ];
 
   return (
