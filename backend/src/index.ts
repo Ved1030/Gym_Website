@@ -7,15 +7,19 @@ console.log(`Server starting on port ${config.port}`);
 
 const app = express();
 
-const allowedOrigins = config.frontendUrl.split(',').map(s => s.trim()).filter(Boolean);
+console.log('[CORS] === CORS DEBUG ===');
+console.log('[CORS] FRONTEND_URL env value:', process.env.FRONTEND_URL || '(not set)');
+console.log('[CORS] Parsed allowed origins:', config.frontendUrl);
+
+app.use((req, _res, next) => {
+  console.log('[CORS] Incoming request origin:', req.headers.origin || '(no origin header)');
+  console.log('[CORS] Request method:', req.method);
+  console.log('[CORS] Request path:', req.path);
+  next();
+});
+
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.some(o => origin.startsWith(o))) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true,
   credentials: true,
 }));
 app.use(express.json());
