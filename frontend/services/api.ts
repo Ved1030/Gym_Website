@@ -11,7 +11,8 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use((req) => {
-  console.log('[API] Request:', req.method?.toUpperCase(), req.baseURL + req.url);
+  const fullUrl = `${req.baseURL || ''}${req.url || ''}`;
+  console.log('[API] Request:', req.method?.toUpperCase(), fullUrl);
   return req;
 });
 

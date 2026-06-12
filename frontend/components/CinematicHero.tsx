@@ -77,7 +77,7 @@ export default function CinematicHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-2 sm:mt-3 md:mt-4 max-w-[700px] font-bold tracking-tight max-md:text-[42px] max-sm:text-[36px] max-[375px]:text-[32px] max-[320px]:text-[28px] max-md:leading-[1.1] md:heading-xl"
+          className="heading-xl mt-2 sm:mt-3 md:mt-4 max-w-[700px] font-bold tracking-tight max-md:!text-[42px] max-sm:!text-[36px] max-[375px]:!text-[32px] max-[320px]:!text-[28px] max-md:!leading-[1.1]"
         >
           <span className="text-foreground">Transform Your Body.</span>
           <br />
