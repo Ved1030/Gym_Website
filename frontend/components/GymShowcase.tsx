@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
   useSpring,
+  useMotionValue,
   useMotionValueEvent,
 } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -70,8 +71,15 @@ export default function GymShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardHeight, setCardHeight] = useState(650);
   const [containerW, setContainerW] = useState(1200);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [interactionPaused, setInteractionPaused] = useState(false);
+  const pauseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const maxIndex = Math.max(0, facilities.length - cardsPerView);
+
+  const mobileTargetX = useMotionValue(0);
+  const mobileSmoothX = useSpring(mobileTargetX, { stiffness: 80, damping: 25, restDelta: 0.001 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -128,6 +136,7 @@ export default function GymShowcase() {
   const smoothX = useSpring(x, { stiffness: 80, damping: 25, restDelta: 0.001 });
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    if (isMobile) return;
     const effectiveMax = Math.max(0, facilities.length - (cardsPerView || 3));
     if (effectiveMax === 0) {
       setCurrentIndex(0);
@@ -138,17 +147,62 @@ export default function GymShowcase() {
     setCurrentIndex(Math.max(0, Math.min(idx, effectiveMax)));
   });
 
-  const goTo = useCallback(
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || !isVisible || interactionPaused) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [isMobile, isVisible, interactionPaused, maxIndex]);
+
+  useEffect(() => {
+    if (isMobile) {
+      mobileTargetX.set(-(currentIndex * step));
+    }
+  }, [isMobile, currentIndex, step, mobileTargetX]);
+
+  const handleNavigation = useCallback(
     (index: number) => {
       const target = Math.max(0, Math.min(index, maxIndex));
+      if (isMobile) {
+        setCurrentIndex(target);
+        setInteractionPaused(true);
+        if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+        pauseTimerRef.current = setTimeout(() => setInteractionPaused(false), 5000);
+        return;
+      }
       if (!sectionRef.current || maxIndex === 0) return;
       const sectionTop = sectionRef.current.offsetTop;
       const scrollable = sectionRef.current.offsetHeight - window.innerHeight;
       const targetScroll = sectionTop + (target / maxIndex) * scrollable;
       window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     },
-    [maxIndex]
+    [maxIndex, isMobile]
   );
+
+  useEffect(() => {
+    return () => {
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    };
+  }, []);
 
   const sectionHeight = (maxIndex + 1) * 100 + 60;
   const cardWidth = getCardWidth();
@@ -157,7 +211,7 @@ export default function GymShowcase() {
     <section
       ref={sectionRef}
       className="relative"
-      style={{ height: `${sectionHeight}vh` }}
+      style={{ height: isMobile ? '100vh' : `${sectionHeight}vh` }}
     >
       <div
         className="sticky top-0 h-screen overflow-hidden bg-background"
@@ -205,7 +259,7 @@ export default function GymShowcase() {
                 <motion.div
                   ref={trackRef}
                   className="flex gap-6 h-full items-end sm:items-center"
-                  style={{ x: smoothX, cursor: 'grab' }}
+                  style={{ x: isMobile ? mobileSmoothX : smoothX, cursor: 'grab' }}
                 >
                   {facilities.map((f, i) => (
                     <motion.div
@@ -214,7 +268,9 @@ export default function GymShowcase() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: i * 0.1 }}
-                      className="group relative flex-shrink-0 overflow-hidden rounded-[28px] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-[0_24px_80px_rgba(0,0,0,0.6)]"
+                      className={`group relative flex-shrink-0 overflow-hidden rounded-[28px] transition-all duration-300 ease-out ${
+                        isMobile ? '' : 'hover:scale-[1.02] hover:shadow-[0_24px_80px_rgba(0,0,0,0.6)]'
+                      }`}
                       style={{
                         width: cardWidth,
                         height: cardHeight,
@@ -223,7 +279,9 @@ export default function GymShowcase() {
                       <img
                         src={f.image}
                         alt={f.name}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105"
+                        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out ${
+                          isMobile ? '' : 'group-hover:scale-105'
+                        }`}
                       />
 
                       <div
@@ -234,7 +292,9 @@ export default function GymShowcase() {
                         }}
                       />
                       <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className={`absolute inset-0 transition-opacity duration-300 ${
+                          isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                        }`}
                         style={{
                           background:
                             'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)',
@@ -248,10 +308,18 @@ export default function GymShowcase() {
                         <h3 className="md:text-[48px] text-4xl font-bold font-serif mb-4 leading-[1.1]">
                           {f.name}
                         </h3>
-                        <p className="text-xl text-muted-foreground font-light mb-5 leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                        <p className={`text-xl text-muted-foreground font-light mb-5 leading-snug transition-all duration-300 ease-out ${
+                          isMobile
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
+                        }`}>
                           {f.subtitle}
                         </p>
-                        <p className="text-base text-muted-foreground/80 leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                        <p className={`text-base text-muted-foreground/80 leading-relaxed transition-all duration-300 ease-out ${
+                          isMobile
+                            ? 'opacity-100 translate-y-0'
+                            : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
+                        }`}>
                           {f.description}
                         </p>
                       </div>
@@ -263,7 +331,7 @@ export default function GymShowcase() {
 
             <div className="shrink-0 flex items-center justify-center gap-6 pt-6 sm:pt-8">
               <button
-                onClick={() => goTo(currentIndex - 1)}
+                onClick={() => handleNavigation(currentIndex - 1)}
                 disabled={currentIndex === 0}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
               >
@@ -275,7 +343,7 @@ export default function GymShowcase() {
                 {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => goTo(i)}
+                    onClick={() => handleNavigation(i)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       i === currentIndex
                         ? 'bg-primary w-6'
@@ -286,7 +354,7 @@ export default function GymShowcase() {
               </div>
 
               <button
-                onClick={() => goTo(currentIndex + 1)}
+                onClick={() => handleNavigation(currentIndex + 1)}
                 disabled={currentIndex >= maxIndex}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
               >

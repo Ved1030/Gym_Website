@@ -122,15 +122,38 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
     setLoading(true);
 
     try {
-      const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001'}/api/chat`;
-      console.log('[Chat] Sending to:', url, { message: content });
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+      console.log('[Chat] === DEBUG ===');
+      console.log('[Chat] NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL);
+      console.log('[Chat] Resolved API base URL:', apiBaseUrl);
+      console.log('[Chat] Full endpoint:', `${apiBaseUrl}/api/chat`);
+      console.log('[Chat] Request payload:', JSON.stringify({ message: content }));
+
       const res = await api.post('/api/chat', { message: content });
-      console.log('[Chat] Response:', res.status, JSON.stringify(res.data).slice(0, 200));
+
+      console.log('[Chat] Response status:', res.status);
+      console.log('[Chat] Response headers:', JSON.stringify(res.headers));
+      console.log('[Chat] Response body:', JSON.stringify(res.data));
+
+      if (!res.data || typeof res.data !== 'object') {
+        console.error('[Chat] Invalid response format - not an object:', JSON.stringify(res.data));
+        throw new Error('Invalid response format from server');
+      }
+
+      if (!res.data.response) {
+        console.error('[Chat] Missing response field in body:', JSON.stringify(res.data));
+        const errMsg = res.data.message || res.data.error || 'No response from assistant';
+        throw new Error(errMsg);
+      }
+
       const reply: Message = { role: 'assistant', content: res.data.response, timestamp: new Date() };
       setMessages((prev) => [...prev, reply]);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       console.error('[Chat] Failed:', errorMsg);
+      if (err instanceof Error && err.stack) {
+        console.error('[Chat] Stack:', err.stack);
+      }
       setMessages((prev) => [
         ...prev,
         {
