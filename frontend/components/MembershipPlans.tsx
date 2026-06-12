@@ -107,10 +107,9 @@ export default function MembershipPlans() {
               layout
               className={`relative flex flex-col rounded-2xl border transition-all duration-300 h-[560px] ${
                 plan.popular
-                  ? 'border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_40px_rgba(255,59,59,0.15)]'
+                  ? 'border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_40px_rgba(255,59,59,0.15)] md:scale-[1.02]'
                   : 'border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]'
               } hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,59,59,0.1)]`}
-              style={plan.popular ? { transform: 'scale(1.03)' } : undefined}
             >
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">

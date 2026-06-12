@@ -118,7 +118,7 @@ export default function Navigation() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'block text-sm transition-colors py-3',
+                    'block text-sm transition-colors py-4',
                     activeSection === link.href.replace('#', '')
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-primary'
@@ -128,7 +128,7 @@ export default function Navigation() {
                 </a>
               ))}
               <a href="#trial" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full bg-primary hover:bg-primary/90">
+                <Button className="w-full bg-primary hover:bg-primary/90 h-11">
                   Free Trial
                 </Button>
               </a>

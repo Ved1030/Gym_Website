@@ -372,7 +372,7 @@ export default function AIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-48 sm:bottom-44 right-2 sm:right-8 z-40 w-[380px] max-w-[calc(100vw-32px)] h-[650px] max-h-[calc(100vh-200px)] bg-[#111111]/90 backdrop-blur-2xl border border-white/10 overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,0,0,0.2)] max-sm:w-[calc(100vw-16px)] max-sm:h-[calc(100vh-180px)]"
+            className="fixed bottom-48 sm:bottom-44 right-4 sm:right-8 z-40 w-[380px] max-w-[calc(100vw-32px)] h-[650px] max-h-[calc(100vh-208px)] bg-[#111111]/90 backdrop-blur-2xl border border-white/10 overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,0,0,0.2)] max-sm:w-[calc(100vw-32px)] max-sm:h-[calc(100vh-208px)]"
             style={{ borderRadius: '24px' }}
           >
             <ChatHeader />
