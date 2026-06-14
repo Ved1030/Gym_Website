@@ -96,7 +96,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "👋 Welcome to Glorious Fitness! I'm your AI Coach. Ask me anything about memberships, fitness plans, trainers, timings, or free trials. I'm here to help! 💪",
+      content: "👋 Welcome to Mythos Fitness! I'm your AI Coach. Ask me anything about memberships, fitness plans, trainers, timings, or free trials. I'm here to help! 💪",
       timestamp: new Date(),
     },
   ]);
@@ -232,7 +232,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
                       key={`${cta.label}::${cta.action}::${cta.href || ''}`}
                       onClick={() => {
                         if (cta.action === 'maps') {
-                          window.open('https://maps.google.com/?q=Glorious+Fitness+Ghatkopar+East+Mumbai', '_blank');
+                          window.open('https://maps.google.com/?q=Mythos+Fitness+Ghatkopar+East+Mumbai', '_blank');
                         } else if (cta.href) {
                           const el = document.querySelector(cta.href);
                           if (el) el.scrollIntoView({ behavior: 'smooth' });

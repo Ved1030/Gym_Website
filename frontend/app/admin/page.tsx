@@ -142,7 +142,7 @@ export default function AdminPage() {
           className="glass rounded-2xl p-8 w-full max-w-sm"
         >
           <h1 className="text-2xl font-bold text-center mb-2">Admin Login</h1>
-          <p className="text-sm text-muted-foreground text-center mb-6">Glorious Fitness Dashboard</p>
+          <p className="text-sm text-muted-foreground text-center mb-6">Mythos Fitness Dashboard</p>
           <form onSubmit={login} className="space-y-4">
             <Input
               type="email" placeholder="Email" required
@@ -180,7 +180,7 @@ export default function AdminPage() {
         <button className="lg:hidden p-2" onClick={() => setSidebarOpen(!sidebarOpen)}>
           {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-        <span className="font-bold text-sm"><span className="text-primary">GLORIOUS</span> ADMIN</span>
+        <span className="font-bold text-sm"><span className="text-primary">MYTHOS</span> ADMIN</span>
         <Button variant="ghost" size="sm" onClick={logout} className="gap-2 text-muted-foreground">
           <LogOut className="h-4 w-4" /> Logout
         </Button>

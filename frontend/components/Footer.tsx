@@ -24,10 +24,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/gloriousfitness' },
-    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/gloriousfitness' },
-    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@gloriousfitness' },
-    { name: 'X', icon: XIcon, href: 'https://x.com/gloriousfitness' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/mythosfitness' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/mythosfitness' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@mythosfitness' },
+    { name: 'X', icon: XIcon, href: 'https://x.com/mythosfitness' },
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <Dumbbell className="h-6 w-6 text-primary" />
               <span className="font-bold text-lg">
-                <span className="text-primary">GLORIOUS</span>{' '}
+                <span className="text-primary">MYTHOS</span>{' '}
                 <span className="text-foreground/80">FITNESS</span>
               </span>
             </div>
@@ -82,11 +82,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@gloriousfitness.com"
+                  href="mailto:info@mythosfitness.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4 text-primary shrink-0" />
-                  <span>info@gloriousfitness.com</span>
+                  <span>info@mythosfitness.com</span>
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -120,7 +120,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Glorious Fitness By Prashant Wadekar. All rights reserved.
+            &copy; {new Date().getFullYear()} Mythos Fitness. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

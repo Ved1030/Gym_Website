@@ -6,7 +6,7 @@ import { Award, Star, Medal, Target } from 'lucide-react';
 
 const trainers = [
   {
-    name: 'Prashant Wadekar',
+    name: 'Head Coach',
     role: 'Founder & Head Trainer',
     experience: '15+ Years',
     specialization: 'Strength & Conditioning',

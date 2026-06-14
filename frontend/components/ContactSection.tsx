@@ -33,7 +33,7 @@ export default function ContactSection() {
           >
             <div
               className="relative glass-strong rounded-2xl overflow-hidden h-52 sm:h-56 md:h-60 lg:h-64 border border-white/10 group cursor-pointer"
-              onClick={() => window.open('https://maps.google.com/?q=Glorious+Fitness+Ghatkopar+East+Mumbai', '_blank')}
+              onClick={() => window.open('https://maps.google.com/?q=Mythos+Fitness+Ghatkopar+East+Mumbai', '_blank')}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.282!2d72.908!3d19.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c5b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sGhatkopar%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1"
@@ -43,7 +43,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Glorious Fitness Location"
+                title="Mythos Fitness Location"
                 className="pointer-events-none transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
@@ -58,7 +58,7 @@ export default function ContactSection() {
               </div>
               <div className="absolute bottom-3 left-3 right-3 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="glass rounded-xl px-3 py-2 mx-auto max-w-[220px]">
-                  <p className="text-xs font-semibold text-center">Glorious Fitness</p>
+                  <p className="text-xs font-semibold text-center">Mythos Fitness</p>
                   <p className="text-[10px] text-muted-foreground text-center">Ghatkopar East, Mumbai</p>
                   <p className="text-[10px] text-muted-foreground text-center">+91 98765 43210</p>
                 </div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                 <Mail className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground break-words">info@gloriousfitness.com</p>
+                  <p className="text-muted-foreground break-words">info@mythosfitness.com</p>
                 </div>
               </div>
             </div>

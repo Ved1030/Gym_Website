@@ -6,12 +6,12 @@ const prisma = new PrismaClient();
 async function main() {
   const adminPassword = await bcrypt.hash('admin123', 12);
   await prisma.user.upsert({
-    where: { email: 'admin@gloriousfitness.com' },
+    where: { email: 'admin@mythosfitness.com' },
     update: {},
     create: {
-      email: 'admin@gloriousfitness.com',
+      email: 'admin@mythosfitness.com',
       password: adminPassword,
-      name: 'Prashant Wadekar',
+name: 'Head Coach',
       role: 'ADMIN',
     },
   });
@@ -26,7 +26,7 @@ async function main() {
 
   await prisma.trainer.deleteMany();
   const trainers = [
-    { name: 'Prashant Wadekar', experience: 15, specialization: 'Strength & Conditioning', certifications: 'NSCA-CSCS, ACE-CPT, CrossFit L2', isFounder: true, order: 1 },
+    { name: 'Founder & Head Coach', experience: 15, specialization: 'Strength & Conditioning', certifications: 'NSCA-CSCS, ACE-CPT, CrossFit L2', isFounder: true, order: 1 },
     { name: 'Vikram Joshi', experience: 10, specialization: 'Functional Training', certifications: 'ACE-CPT, NASM-CES', isFounder: false, order: 2 },
     { name: 'Neha Singh', experience: 8, specialization: 'Yoga & Pilates', certifications: 'RYT-500, ACE-GFI', isFounder: false, order: 3 },
     { name: 'Rohan Desai', experience: 7, specialization: 'Sports Nutrition', certifications: 'ISSN-SNS, ACE-CPT', isFounder: false, order: 4 },
@@ -42,7 +42,7 @@ async function main() {
   await prisma.review.createMany({ data: reviews });
 
   console.log('Seed data created successfully');
-  console.log('Admin login: admin@gloriousfitness.com / admin123');
+  console.log('Admin login: admin@mythosfitness.com / admin123');
 }
 
 main()

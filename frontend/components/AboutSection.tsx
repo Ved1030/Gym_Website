@@ -43,10 +43,10 @@ export default function AboutSection() {
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
             Why{' '}
-            <span className="text-gradient">Glorious Fitness</span>?
+            <span className="text-gradient">Mythos Fitness</span>?
           </h2>
           <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-            Founded by Prashant Wadekar, Glorious Fitness is Ghatkopar East&apos;s premier
+            Founded by our expert team, Mythos Fitness is Ghatkopar East&apos;s premier
             fitness destination. We combine world-class equipment with expert guidance
             to help you achieve your fitness goals.
           </p>

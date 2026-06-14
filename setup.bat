@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo   Glorious Fitness - Project Setup
+echo   Mythos Fitness - Project Setup
 echo ========================================
 echo.
 
@@ -50,7 +50,7 @@ echo.
 echo   Admin Login:
 echo     First run: cd backend ^&^& npx prisma db push ^&^& npx tsx src/prisma/seed.ts
 echo     Then login at: http://localhost:3000/admin
-echo     Email: admin@gloriousfitness.com
+echo     Email: admin@mythosfitness.com
 echo     Password: admin123
 echo.
 pause

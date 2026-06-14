@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Glorious Fitness By Prashant Wadekar | Premium Gym in Ghatkopar East, Mumbai',
+  title: 'Mythos Fitness | Premium Gym in Ghatkopar East, Mumbai',
   description:
-    'Mumbai\'s premium fitness experience. Transform your body with expert trainers, state-of-the-art equipment, and personalized programs at Glorious Fitness in Ghatkopar East.',
+    'Mumbai\'s premium fitness experience. Transform your body with expert trainers, state-of-the-art equipment, and personalized programs at Mythos Fitness in Ghatkopar East.',
   keywords: [
-    'gym', 'fitness', 'Ghatkopar', 'Mumbai', 'Prashant Wadekar', 'personal training',
+    'gym', 'fitness', 'Ghatkopar', 'Mumbai', 'personal training',
     'membership', 'transformation', 'strength training', 'cardio',
   ],
 };

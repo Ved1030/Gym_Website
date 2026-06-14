@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '919876543210';
-const WHATSAPP_MESSAGE = 'Hi! I want to know more about Glorious Fitness.';
+const WHATSAPP_MESSAGE = 'Hi! I want to know more about Mythos Fitness.';
 
 export default function FloatingWhatsApp() {
   return (
