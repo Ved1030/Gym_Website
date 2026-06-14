@@ -60,7 +60,7 @@ export default function Navigation() {
           <a href="#" className="flex items-center gap-2 group">
             <Dumbbell className="h-6 w-6 text-primary group-hover:rotate-45 transition-transform duration-300" />
             <span className="text-lg font-bold tracking-tight">
-              <span className="text-primary">GLORIOUS</span>{' '}
+              <span className="text-primary">MYTHOS</span>{' '}
               <span className="text-foreground/80">FITNESS</span>
             </span>
           </a>
