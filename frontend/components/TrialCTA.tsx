@@ -38,7 +38,7 @@ export default function TrialCTA() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 text-green-400 mb-4">
               <Check className="h-8 w-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Welcome to Evolve Fitness!</h3>
+            <h3 className="text-2xl font-bold mb-2">Welcome to Gym Mantra Fitness Studio!</h3>
             <p className="text-muted-foreground mb-6">
               We&apos;ll contact you shortly to schedule your free trial session.
             </p>
@@ -61,7 +61,7 @@ export default function TrialCTA() {
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: 'radial-gradient(circle at 25% 50%, #FFD700 0%, transparent 50%)',
+            backgroundImage: 'radial-gradient(circle at 25% 50%, #DC2626 0%, transparent 50%)',
           }}
         />
       </div>
@@ -130,7 +130,7 @@ export default function TrialCTA() {
                 <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Phone Number</label>
                 <input
                   type="tel"
-                  placeholder="+91 96645 09309"
+                  placeholder="+91 91797 97197"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   required

@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Ananya Mehta', rating: 5, text: 'Absolutely love this gym! The trainers are incredibly knowledgeable and supportive. I\'ve seen amazing results in just 3 months.' },
-  { name: 'Karan Desai', rating: 5, text: 'The best gym in Ghatkopar! State-of-the-art equipment, clean facilities, and expert trainers. Highly recommend.' },
-  { name: 'Ritu Agarwal', rating: 4, text: 'Great atmosphere and amazing community. The group classes are fantastic and the trainers keep everyone motivated!' },
-  { name: 'Siddharth Rao', rating: 5, text: 'Prashant and his team are truly dedicated. They don\'t just train you, they educate you about fitness.' },
-  { name: 'Pooja Nair', rating: 5, text: 'Joined 6 months ago and it\'s been life-changing. The personalized attention sets this gym apart.' },
-  { name: 'Arjun Kapadia', rating: 4, text: 'Excellent facilities and flexible timing options. Perfect for working professionals.' },
+  { name: 'Rahul Mehta', rating: 5, text: 'Excellent experience for beginners. Certified trainers, advanced equipment, and a motivating atmosphere make workouts enjoyable and effective.' },
+  { name: 'Priya Sharma', rating: 5, text: 'A great place to stay fit and healthy. The trainers are knowledgeable, professional, and provide personalized guidance based on individual goals.' },
+  { name: 'Amit Patel', rating: 5, text: 'Friendly atmosphere, modern equipment, fully air-conditioned facilities, and experienced trainers. One of the best fitness studios in Ghatkopar.' },
+  { name: 'Neha Desai', rating: 5, text: 'Professional environment with quality training. The equipment is updated regularly and the coaching is excellent.' },
+  { name: 'Vikram Joshi', rating: 5, text: 'The personalized attention from the trainers here is unmatched. They genuinely care about your progress and fitness journey.' },
+  { name: 'Sneha Kapoor', rating: 4, text: 'Great facility with a welcoming atmosphere. The trainers are supportive and help you stay motivated throughout your fitness journey.' },
 ];
 
 export default function TestimonialsSection() {
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
                     <Star
                       key={i}
                       className={`h-3.5 w-3.5 ${
-                        i < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted'
+                        i < t.rating ? 'text-red-500 fill-red-500' : 'text-muted'
                       }`}
                     />
                   ))}

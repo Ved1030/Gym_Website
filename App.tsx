@@ -13,15 +13,15 @@ const App: React.FC = () => {
   return (
     <Theme appearance="dark" radius="large" scaling="100%">
       <Router>
-        <main className="min-h-screen bg-black font-sans selection:bg-yellow-600 selection:text-black">
+        <main className="min-h-screen bg-black font-sans selection:bg-red-600 selection:text-white">
           <Suspense fallback={
             <div className="h-screen w-full flex items-center justify-center bg-black">
               <div className="flex flex-col items-center gap-4">
                 <div className="text-3xl font-bold font-serif tracking-tighter">
-                  EVOLVE <span className="text-yellow-600">FITNESS</span>
+                  GYM MANTRA <span className="text-red-600">FITNESS</span>
                 </div>
                 <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-yellow-600 animate-[loading_1.5s_ease-in-out_infinite]" />
+                  <div className="h-full bg-red-600 animate-[loading_1.5s_ease-in-out_infinite]" />
                 </div>
               </div>
             </div>

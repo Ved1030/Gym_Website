@@ -11,12 +11,12 @@ import {
 } from 'lucide-react';
 
 const facilities = [
-  { icon: Dumbbell, title: 'Strength Training Zone', description: 'Power racks, deadlift platforms, and premium free weights for serious strength training.' },
-  { icon: Heart, title: 'Cardio Equipment', description: 'Treadmills, bikes, rowing machines, and ellipticals for effective cardio workouts.' },
-  { icon: Zap, title: 'Functional Training', description: 'Dedicated space for functional movements, battle ropes, kettlebells, and agility training.' },
+  { icon: Dumbbell, title: 'Strength Training Zone', description: 'Power racks, free weights, and premium equipment for serious strength training.' },
+  { icon: Heart, title: 'Latest Cardio Equipment', description: 'Modern treadmills, bikes, and machines for effective cardio workouts.' },
+  { icon: Zap, title: 'Functional Training Area', description: 'Dedicated space for functional movements, battle ropes, kettlebells, and more.' },
   { icon: Target, title: 'Weight Loss Programs', description: 'Structured programs designed to help you shed weight effectively and safely.' },
-  { icon: User, title: 'Personal Training', description: 'One-on-one sessions with certified trainers for personalized results.' },
-  { icon: Users, title: 'Ladies Gym Section', description: 'A separate dedicated section for women with specialized equipment and female trainers.' },
+  { icon: User, title: 'Personal Training Studio', description: 'One-on-one sessions with certified trainers for personalized results.' },
+  { icon: Users, title: 'Muscle Gain Programs', description: 'Specialized programs with certified coaches to build lean muscle mass.' },
 ];
 
 export default function FacilitiesSection() {

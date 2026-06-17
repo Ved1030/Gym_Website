@@ -82,14 +82,14 @@ export default function PlansSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative flex flex-col rounded-2xl border transition-all duration-300 h-[520px] ${
                 plan.popular
-                  ? 'border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_40px_rgba(255,215,0,0.15)]'
+                  ? 'border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_40px_rgba(220,38,38,0.15)]'
                   : 'border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]'
-              } hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,215,0,0.1)]`}
+              } hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(220,38,38,0.1)]`}
               style={plan.popular ? { transform: 'scale(1.03)' } : undefined}
             >
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
-                  <div className="bg-primary text-primary-foreground text-[11px] font-semibold px-5 py-1.5 rounded-full shadow-[0_0_20px_rgba(255,215,0,0.4)]">
+                  <div className="bg-primary text-primary-foreground text-[11px] font-semibold px-5 py-1.5 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                     Best Value
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function PlansSection() {
                     <Button
                       className={`w-full gap-2 transition-all duration-300 ${
                         plan.popular
-                          ? 'shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)]'
+                          ? 'shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]'
                           : 'bg-white/[0.06] text-foreground hover:bg-white/[0.10] border border-white/[0.08]'
                       }`}
                       variant={plan.popular ? 'default' : 'outline'}

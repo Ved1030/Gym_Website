@@ -59,10 +59,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-2 group">
             <Dumbbell className="h-6 w-6 text-primary group-hover:rotate-45 transition-transform duration-300" />
-            <span className="text-lg font-bold tracking-tight">
-              <span className="text-primary">EVOLVE</span>{' '}
-              <span className="text-foreground/80">FITNESS</span>
-            </span>
+              <span className="text-lg font-bold tracking-tight">
+                <span className="text-primary">GYM MANTRA</span>{' '}
+                <span className="text-foreground/80">FITNESS</span>
+              </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">

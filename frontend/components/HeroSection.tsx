@@ -6,9 +6,9 @@ import { ArrowRight, Play, Star, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const stats = [
-  { icon: Star, value: '103+', label: 'Reviews' },
-  { icon: Star, value: '4.5', label: 'Rating' },
-  { icon: Award, value: '5000+', label: 'Transformations' },
+  { icon: Star, value: '157+', label: 'Reviews' },
+  { icon: Star, value: '4.9', label: 'Rating' },
+  { icon: Award, value: '500+', label: 'Transformations' },
   { icon: Shield, value: 'Premium', label: 'Equipment' },
 ];
 
@@ -44,7 +44,7 @@ export default function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-medium text-primary mb-6">
               <Play className="h-3 w-3 fill-primary" />
-              Mumbai&apos;s Premium Fitness Destination
+              Ghatkopar&apos;s Premium Fitness Studio
             </span>
           </motion.div>
 
@@ -57,8 +57,8 @@ export default function HeroSection() {
             <span className="text-gradient">Transform</span>{' '}
             <span className="text-foreground">Your Body.</span>
             <br />
-            <span className="text-foreground/80">Unlock Your</span>{' '}
-            <span className="text-gradient">Potential.</span>
+            <span className="text-gradient">Transform</span>{' '}
+            <span className="text-foreground/80">Your Life.</span>
           </motion.h1>
 
           <motion.p
@@ -67,8 +67,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed"
           >
-            Experience world-class training, premium equipment, and expert guidance at
-            Mumbai&apos;s most elite fitness facility.
+            Experience certified training, modern equipment, and a motivating atmosphere at
+            Ghatkopar West&apos;s highest-rated fitness studio.
           </motion.p>
 
           <motion.div

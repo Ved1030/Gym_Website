@@ -6,10 +6,10 @@ const prisma = new PrismaClient();
 async function main() {
   const adminPassword = await bcrypt.hash('admin123', 12);
   await prisma.user.upsert({
-    where: { email: 'admin@evolvefitness.in' },
+    where: { email: 'admin@gymmantrafitness.in' },
     update: {},
     create: {
-      email: 'admin@evolvefitness.in',
+      email: 'admin@gymmantrafitness.in',
       password: adminPassword,
 name: 'Head Coach',
       role: 'ADMIN',
@@ -42,7 +42,7 @@ name: 'Head Coach',
   await prisma.review.createMany({ data: reviews });
 
   console.log('Seed data created successfully');
-  console.log('Admin login: admin@evolvefitness.in / admin123');
+  console.log('Admin login: admin@gymmantrafitness.in / admin123');
 }
 
 main()

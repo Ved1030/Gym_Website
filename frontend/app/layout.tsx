@@ -9,12 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Evolve Fitness | Premium Gym in Ghatkopar West, Mumbai',
+  title: 'Gym Mantra Fitness Studio | Best Gym in Ghatkopar West Mumbai',
   description:
-    'Transform. Strengthen. Evolve. Premium fitness destination in Ghatkopar West with expert trainers, state-of-the-art equipment, and personalized fitness programs at Evolve Fitness.',
+    'Join Gym Mantra Fitness Studio in Ghatkopar West. Certified trainers, modern equipment, personal training, weight loss programs, and premium fitness facilities.',
   keywords: [
     'gym', 'fitness', 'Ghatkopar', 'Mumbai', 'personal training',
     'membership', 'transformation', 'strength training', 'cardio',
+    'Gym Mantra', 'weight loss', 'muscle gain',
   ],
 };
 

@@ -33,7 +33,7 @@ export default function ContactSection() {
           >
             <div
               className="relative glass-strong rounded-2xl overflow-hidden h-52 sm:h-56 md:h-60 lg:h-64 border border-white/10 group cursor-pointer"
-              onClick={() => window.open('https://maps.google.com/?q=Evolve+Fitness+Ghatkopar+West+Mumbai', '_blank')}
+              onClick={() => window.open('https://maps.google.com/?q=Gym+Mantra+Fitness+Studio+Ghatkopar+West+Mumbai', '_blank')}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.282!2d72.908!3d19.078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7c5b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sGhatkopar%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1"
@@ -43,7 +43,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Evolve Fitness Location"
+                title="Gym Mantra Fitness Studio Location"
                 className="pointer-events-none transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
@@ -51,16 +51,16 @@ export default function ContactSection() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="relative flex flex-col items-center">
                     <div className="animate-bounce-slow">
-                      <MapPin className="h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 text-[#FFD700] drop-shadow-[0_0_12px_rgba(255,215,0,0.7)]" />
+                      <MapPin className="h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 text-[#DC2626] drop-shadow-[0_0_12px_rgba(220,38,38,0.7)]" />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="absolute bottom-3 left-3 right-3 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="glass rounded-xl px-3 py-2 mx-auto max-w-[220px]">
-                  <p className="text-xs font-semibold text-center">Evolve Fitness</p>
+                  <p className="text-xs font-semibold text-center">Gym Mantra Fitness Studio</p>
                   <p className="text-[10px] text-muted-foreground text-center">Ghatkopar West, Mumbai</p>
-                  <p className="text-[10px] text-muted-foreground text-center">+91 96645 09309</p>
+                  <p className="text-[10px] text-muted-foreground text-center">+91 91797 97197</p>
                 </div>
               </div>
               <div className="absolute top-3 right-3 glass rounded-full px-3 py-1.5 flex items-center gap-1.5 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -72,7 +72,7 @@ export default function ContactSection() {
 
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <a
-                href="https://wa.me/919664509309"
+                href="https://wa.me/919179797197"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-strong rounded-xl p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:border-green-500/30 transition-all duration-300 group border border-white/10"
@@ -87,7 +87,7 @@ export default function ContactSection() {
               </a>
 
               <a
-                href="tel:+919664509309"
+                href="tel:+919179797197"
                 className="glass-strong rounded-xl p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:border-primary/30 transition-all duration-300 group border border-white/10"
               >
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -95,7 +95,7 @@ export default function ContactSection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[10px] md:text-xs text-muted-foreground">Call us</p>
-                  <p className="text-sm md:font-semibold truncate">+91 96645 09309</p>
+                  <p className="text-sm md:font-semibold truncate">+91 91797 97197</p>
                 </div>
               </a>
             </div>
@@ -105,21 +105,21 @@ export default function ContactSection() {
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium">Address</p>
-                  <p className="text-muted-foreground">1st Floor, Doshi Wadi, 115 to 118, Lal Bahadur Shastri Marg, Opp. Sarvodaya Bus Stop, Bhatwadi, Kapol Wadi, Ghatkopar West, Mumbai, Maharashtra 400086</p>
+                  <p className="text-muted-foreground">Shop No. 2, Plot No. 2, 589, Raj Rajeshwari Society, Landmark - Bisleri Company, Building Road, Opp. Akashdyam Building, Narayan Nagar, Ghatkopar West, Mumbai, Maharashtra 400086</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-xs md:text-sm">
                 <Clock className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium">Working Hours</p>
-                  <p className="text-muted-foreground">Open Daily: 6:00 AM - 11:00 PM</p>
+                  <p className="text-muted-foreground">Mon-Sat: 6:00 AM - 1:00 PM & 4:00 PM - 11:00 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-xs md:text-sm">
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium">Plus Code</p>
-                  <p className="text-muted-foreground">3WQ4+9R Mumbai, Maharashtra</p>
+                  <p className="text-muted-foreground">3VQW+3G Mumbai, Maharashtra</p>
                 </div>
               </div>
             </div>
@@ -172,24 +172,24 @@ export default function ContactSection() {
 
             <div className="grid grid-cols-3 gap-3 md:gap-4 mt-6 md:mt-8 pt-5 md:pt-6 border-t border-white/10">
               <div className="text-center">
-                <div className="flex items-center justify-center gap-0.5 md:gap-1 text-yellow-400 mb-1">
-                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-yellow-400" />
-                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-yellow-400" />
-                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-yellow-400" />
-                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-yellow-400" />
-                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-yellow-400" />
+                <div className="flex items-center justify-center gap-0.5 md:gap-1 text-red-500 mb-1">
+                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
+                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
+                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
+                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
+                  <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
                 </div>
-                <p className="text-base md:text-lg font-bold">4.6</p>
+                <p className="text-base md:text-lg font-bold">4.9</p>
                 <p className="text-[10px] md:text-[11px] text-muted-foreground">Google Rating</p>
               </div>
               <div className="text-center border-x border-white/10">
                 <Users className="h-4 w-4 md:h-5 md:w-5 text-primary mx-auto mb-1" />
-                <p className="text-base md:text-lg font-bold">137+</p>
+                <p className="text-base md:text-lg font-bold">157+</p>
                 <p className="text-[10px] md:text-[11px] text-muted-foreground">Reviews</p>
               </div>
               <div className="text-center">
                 <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-primary mx-auto mb-1" />
-                <p className="text-base md:text-lg font-bold">5000+</p>
+                <p className="text-base md:text-lg font-bold">500+</p>
                 <p className="text-[10px] md:text-[11px] text-muted-foreground">Transformations</p>
               </div>
             </div>

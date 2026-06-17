@@ -6,39 +6,39 @@ import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Ananya Mehta',
+    name: 'Rahul Mehta',
     rating: 5,
-    text: 'Absolutely love this gym! The trainers are incredibly knowledgeable and supportive. I\'ve seen amazing results in just 3 months. The equipment is world-class and the atmosphere keeps you motivated every single day.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
-    achievement: 'Lost 12 kg in 3 months',
-  },
-  {
-    name: 'Karan Desai',
-    rating: 5,
-    text: 'The best gym in Ghatkopar! State-of-the-art equipment, incredibly clean facilities, and trainers who genuinely care about your progress. The dedicated ladies section is a fantastic addition.',
+    text: 'Excellent experience for beginners. Certified trainers, advanced equipment, and a motivating atmosphere make workouts enjoyable and effective. I\'ve seen amazing results in just 3 months.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
-    achievement: 'Gained 8 kg lean muscle',
+    achievement: 'Lost 15 kg in 4 months',
   },
   {
-    name: 'Ritu Agarwal',
-    rating: 4,
-    text: 'Great atmosphere and amazing community. The group classes are fantastic and the trainers ensure everyone stays motivated. Couldn\'t ask for a better fitness family!',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
-    achievement: 'Member since 2022',
-  },
-  {
-    name: 'Siddharth Rao',
+    name: 'Priya Sharma',
     rating: 5,
-    text: 'Prashant and his team are truly world-class. They don\'t just train you, they educate you about fitness and nutrition. Life-changing experience!',
+    text: 'A great place to stay fit and healthy. The trainers are knowledgeable, professional, and provide personalized guidance based on individual goals. Highly recommended!',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    achievement: 'Lost 10 kg in 3 months',
+  },
+  {
+    name: 'Amit Patel',
+    rating: 5,
+    text: 'Friendly atmosphere, modern equipment, fully air-conditioned facilities, and experienced trainers. One of the best fitness studios in Ghatkopar.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
-    achievement: '15 kg transformation',
+    achievement: 'Member since 2023',
   },
   {
-    name: 'Pooja Nair',
+    name: 'Neha Desai',
     rating: 5,
-    text: 'Joined 6 months ago and it\'s been incredible. The personalized attention from the trainers sets this gym apart from every other gym I\'ve tried.',
+    text: 'Professional environment with quality training. The equipment is updated regularly and the coaching is excellent. Truly a premium fitness experience.',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
+    achievement: 'Gained 6 kg lean muscle',
+  },
+  {
+    name: 'Vikram Joshi',
+    rating: 5,
+    text: 'The personalized attention from the trainers here is unmatched. They genuinely care about your progress and help you stay motivated every single day.',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80',
-    achievement: 'Lost 10 kg in 4 months',
+    achievement: 'Lost 12 kg in 4 months',
   },
 ];
 
@@ -99,7 +99,7 @@ export default function VideoTestimonials() {
                       <Star
                         key={i}
                         className={`h-5 w-5 ${
-                          i < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted'
+                          i < t.rating ? 'text-red-500 fill-red-500' : 'text-muted'
                         }`}
                       />
                     ))}
@@ -159,16 +159,16 @@ export default function VideoTestimonials() {
           <div className="mt-12 glass rounded-2xl p-6">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">4.6</div>
+                <div className="text-3xl font-bold text-gradient">4.9</div>
                 <div className="flex gap-0.5 justify-center mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                    <Star key={i} className="h-4 w-4 text-red-500 fill-red-500" />
                   ))}
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">Google Rating</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">137+</div>
+                <div className="text-3xl font-bold text-gradient">157+</div>
                 <p className="text-xs text-muted-foreground mt-2">Reviews</p>
               </div>
             </div>

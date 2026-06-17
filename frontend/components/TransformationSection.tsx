@@ -9,7 +9,7 @@ const transformations = [
     name: 'Rahul Sharma',
     weightLoss: '18 kg',
     duration: '4 Months',
-    testimonial: 'Evolve Fitness transformed my life. The trainers are incredibly supportive and the equipment is world-class.',
+    testimonial: 'Gym Mantra Fitness Studio transformed my life. The trainers are incredibly supportive and the equipment is world-class.',
   },
   {
     name: 'Priya Patel',
@@ -21,7 +21,7 @@ const transformations = [
     name: 'Amit Verma',
     weightLoss: '25 kg',
     duration: '6 Months',
-    testimonial: 'From struggling with stairs to running marathons. Thank you, Evolve Fitness, for this incredible transformation.',
+    testimonial: 'From struggling with stairs to running marathons. Thank you, Gym Mantra Fitness Studio, for this incredible transformation.',
   },
   {
     name: 'Sneha Kapoor',

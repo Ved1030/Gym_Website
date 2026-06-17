@@ -6,23 +6,23 @@ import { Dumbbell, Target, Users, Trophy } from 'lucide-react';
 const highlights = [
   {
     icon: Dumbbell,
-    title: 'Premium Equipment',
-    description: 'State-of-the-art machines and free weights from top global brands.',
+    title: 'Certified Trainers',
+    description: 'Experienced and certified professionals dedicated to your fitness journey.',
   },
   {
     icon: Target,
-    title: 'Expert Trainers',
-    description: 'Certified professionals dedicated to your fitness journey.',
+    title: 'Hi-Tech Equipment',
+    description: 'Latest fitness machines and equipment for effective workouts.',
   },
   {
     icon: Users,
-    title: 'Community',
-    description: 'Join a supportive community of fitness enthusiasts.',
+    title: 'Beginner Friendly',
+    description: 'Welcoming atmosphere perfect for fitness beginners.',
   },
   {
     icon: Trophy,
-    title: 'Proven Results',
-    description: '5000+ successful transformations and counting.',
+    title: 'Premium Experience',
+    description: 'Air-conditioned facility with Dolby surround sound system.',
   },
 ];
 
@@ -43,12 +43,12 @@ export default function AboutSection() {
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
             Why{' '}
-            <span className="text-gradient">Evolve Fitness</span>?
+            <span className="text-gradient">Gym Mantra</span>?
           </h2>
           <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-            Evolve Fitness is a premium fitness destination in Ghatkopar West offering
-            state-of-the-art equipment, expert trainers, strength training, cardio workouts,
-            bodybuilding guidance, weight-loss programs, and a motivating workout environment.
+            Gym Mantra Fitness Studio is one of the highest-rated fitness centers in Ghatkopar West
+            with a 4.9-star rating and 157+ reviews. We offer certified trainers, hi-tech equipment,
+            latest cardio machines, and a fully air-conditioned premium fitness experience.
           </p>
         </motion.div>
 

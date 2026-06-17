@@ -15,8 +15,8 @@ type BMICategory = {
 const getBMICategory = (bmi: number): BMICategory => {
   if (bmi < 18.5) return { category: 'Underweight', color: 'text-blue-400', recommendation: 'Focus on nutrient-dense foods and strength training to build healthy mass.' };
   if (bmi < 25) return { category: 'Normal', color: 'text-green-400', recommendation: 'Great job! Maintain with a balanced diet and regular exercise.' };
-  if (bmi < 30) return { category: 'Overweight', color: 'text-yellow-400', recommendation: 'Combine cardio with strength training and monitor your calorie intake.' };
-  return { category: 'Obese', color: 'text-yellow-400', recommendation: 'Consult our trainers for a personalized fitness and nutrition plan.' };
+  if (bmi < 30) return { category: 'Overweight', color: 'text-red-400', recommendation: 'Combine cardio with strength training and monitor your calorie intake.' };
+  return { category: 'Obese', color: 'text-red-400', recommendation: 'Consult our trainers for a personalized fitness and nutrition plan.' };
 };
 
 export default function BMICalculator() {
