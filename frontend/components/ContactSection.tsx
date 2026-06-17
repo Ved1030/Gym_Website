@@ -72,7 +72,7 @@ export default function ContactSection() {
 
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <a
-                href="https://wa.me/919179797197"
+                href="https://wa.me/919226362409"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-strong rounded-xl p-4 md:p-5 flex items-center gap-3 md:gap-4 hover:border-green-500/30 transition-all duration-300 group border border-white/10"
@@ -119,13 +119,13 @@ export default function ContactSection() {
                   <p className="text-muted-foreground">3WJ4+P6 Mumbai, Maharashtra</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-xs md:text-sm">
+              <a href="tel:+919226362409" className="flex items-start gap-3 text-xs md:text-sm group">
                 <MessageCircle className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium">Contact</p>
-                  <p className="text-muted-foreground">Contact us for membership details</p>
+                  <p className="text-muted-foreground group-hover:text-primary transition-colors">+91 92263 62409</p>
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
 
@@ -183,12 +183,12 @@ export default function ContactSection() {
                   <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
                   <Star className="h-3 w-3 md:h-3.5 md:w-3.5 fill-red-500" />
                 </div>
-                <p className="text-base md:text-lg font-bold">4.8</p>
+                <p className="text-base md:text-lg font-bold">4.5</p>
                 <p className="text-[10px] md:text-[11px] text-muted-foreground">Google Rating</p>
               </div>
               <div className="text-center border-x border-white/10">
                 <Users className="h-4 w-4 md:h-5 md:w-5 text-primary mx-auto mb-1" />
-                <p className="text-base md:text-lg font-bold">20+</p>
+                <p className="text-base md:text-lg font-bold">100+</p>
                 <p className="text-[10px] md:text-[11px] text-muted-foreground">Reviews</p>
               </div>
               <div className="text-center">

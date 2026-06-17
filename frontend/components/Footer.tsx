@@ -1,6 +1,6 @@
 'use client';
 
-import { Dumbbell, MapPin, Clock, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Dumbbell, MapPin, Clock, Phone, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const XIcon = ({ size, className }: { size?: number; className?: string }) => (
   <svg
@@ -75,8 +75,8 @@ export default function Footer() {
                 <span>Mon-Sat: 6:00 AM - 1:00 PM & 4:00 PM - 11:00 PM</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                <span>Contact us for membership details</span>
+                <Phone className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                <a href="tel:+919226362409" className="hover:text-primary transition-colors">+91 92263 62409</a>
               </li>
             </ul>
           </div>

@@ -84,8 +84,8 @@ const jsonLd = {
   openingHours: 'Mo-Sa 06:00-13:00,16:00-23:00',
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '20',
+    ratingValue: '4.5',
+    reviewCount: '100',
   },
 };
 

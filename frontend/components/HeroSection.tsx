@@ -6,8 +6,8 @@ import { ArrowRight, Play, Star, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const stats = [
-  { icon: Star, value: '20+', label: 'Reviews' },
-  { icon: Star, value: '4.8', label: 'Rating' },
+  { icon: Star, value: '100+', label: 'Reviews' },
+  { icon: Star, value: '4.5', label: 'Rating' },
   { icon: Award, value: '500+', label: 'Transformations' },
   { icon: Shield, value: 'Premium', label: 'Equipment' },
 ];

@@ -159,7 +159,7 @@ export default function VideoTestimonials() {
           <div className="mt-12 glass rounded-2xl p-6">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">4.8</div>
+                <div className="text-3xl font-bold text-gradient">4.5</div>
                 <div className="flex gap-0.5 justify-center mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 text-red-500 fill-red-500" />
@@ -168,7 +168,7 @@ export default function VideoTestimonials() {
                 <p className="text-xs text-muted-foreground mt-1">Google Rating</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">20+</div>
+                <div className="text-3xl font-bold text-gradient">100+</div>
                 <p className="text-xs text-muted-foreground mt-2">Reviews</p>
               </div>
             </div>

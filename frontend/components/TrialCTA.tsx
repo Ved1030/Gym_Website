@@ -130,7 +130,7 @@ export default function TrialCTA() {
                 <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Phone Number</label>
                 <input
                   type="tel"
-                  placeholder="+91 91797 97197"
+                  placeholder="+91 92263 62409"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   required

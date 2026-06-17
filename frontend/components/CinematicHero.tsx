@@ -6,8 +6,8 @@ import { ArrowRight, MessageCircle, Star, Award, Clock } from 'lucide-react';
 import Counter from './Counter';
 
 const stats = [
-  { icon: Star, value: 20, suffix: '+', label: 'Reviews' },
-  { icon: Star, value: 4.8, suffix: '', label: 'Rating', decimals: 1 },
+  { icon: Star, value: 100, suffix: '+', label: 'Reviews' },
+  { icon: Star, value: 4.5, suffix: '', label: 'Rating', decimals: 1 },
   { icon: Award, value: 500, suffix: '+', label: 'Transform.' },
   { icon: Clock, value: 8, suffix: '+', label: 'Experience' },
 ];
@@ -105,7 +105,7 @@ export default function CinematicHero() {
               Book Free Trial <ArrowRight className="h-5 w-5 shrink-0" />
             </button>
           </a>
-          <a href="https://wa.me/919179797197" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto max-w-[300px] sm:max-w-none">
+          <a href="https://wa.me/919226362409" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto max-w-[300px] sm:max-w-none">
             <button className="btn-ghost w-full sm:w-auto justify-center">
               <MessageCircle className="h-5 w-5 text-green-400 shrink-0" />
               WhatsApp Us

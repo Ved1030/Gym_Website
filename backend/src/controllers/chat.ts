@@ -3,8 +3,8 @@ import { config } from '../config';
 
 const KNOWLEDGE_BASE = `Gym Name: Mythos Fitness
 Location: Ghatkopar East, Mumbai
-Rating: 4.8 Stars
-Reviews: 20+
+Rating: 4.5 Stars
+Reviews: 100+
 
 Working Hours:
 Monday - Saturday: 6:00 AM – 1:00 PM, 4:00 PM – 11:00 PM
