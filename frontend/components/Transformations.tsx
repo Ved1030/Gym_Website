@@ -73,7 +73,7 @@ function BeforeAfterSlider({
       </div>
 
       <div
-        className="absolute top-0 bottom-0 w-1 bg-primary shadow-[0_0_15px_rgba(255,59,59,0.5)]"
+        className="absolute top-0 bottom-0 w-1 bg-primary shadow-[0_0_15px_rgba(255,215,0,0.5)]"
         style={{ left: `${sliderPos}%` }}
       >
         <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg">

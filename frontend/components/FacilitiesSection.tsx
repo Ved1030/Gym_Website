@@ -5,18 +5,18 @@ import {
   Dumbbell,
   Heart,
   Zap,
-  Cloud,
+  Users,
   User,
-  Apple,
+  Target,
 } from 'lucide-react';
 
 const facilities = [
-  { icon: Dumbbell, title: 'Strength Zone', description: 'Power racks, deadlift platforms, and premium free weights for serious strength training.' },
-  { icon: Heart, title: 'Cardio Zone', description: 'Treadmills, bikes, rowing machines, and ellipticals with individual entertainment screens.' },
+  { icon: Dumbbell, title: 'Strength Training Zone', description: 'Power racks, deadlift platforms, and premium free weights for serious strength training.' },
+  { icon: Heart, title: 'Cardio Equipment', description: 'Treadmills, bikes, rowing machines, and ellipticals for effective cardio workouts.' },
   { icon: Zap, title: 'Functional Training', description: 'Dedicated space for functional movements, battle ropes, kettlebells, and agility training.' },
-  { icon: Cloud, title: 'Steam Room', description: 'Luxurious steam room for post-workout recovery and relaxation.' },
+  { icon: Target, title: 'Weight Loss Programs', description: 'Structured programs designed to help you shed weight effectively and safely.' },
   { icon: User, title: 'Personal Training', description: 'One-on-one sessions with certified trainers for personalized results.' },
-  { icon: Apple, title: 'Nutrition Guidance', description: 'Expert nutritional counseling to complement your fitness regimen.' },
+  { icon: Users, title: 'Ladies Gym Section', description: 'A separate dedicated section for women with specialized equipment and female trainers.' },
 ];
 
 export default function FacilitiesSection() {

@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
       <div className="flex items-center gap-3 mb-6">
-        <Dumbbell className="h-10 w-10 text-red-500" />
+        <Dumbbell className="h-10 w-10 text-yellow-500" />
         <span className="text-4xl font-bold tracking-tight">
-          <span className="text-red-500">GLORIOUS</span>{' '}
+          <span className="text-yellow-500">EVOLVE</span>{' '}
           <span className="text-white/80">FITNESS</span>
         </span>
       </div>
@@ -20,7 +20,7 @@ export default function Home() {
       <div className="flex gap-4">
         <a
           href="http://localhost:3000"
-          className="px-8 py-4 bg-red-600 rounded-xl font-semibold hover:bg-red-700 transition-all"
+          className="px-8 py-4 bg-yellow-600 rounded-xl font-semibold text-black hover:bg-yellow-700 transition-all"
         >
           Visit Full Site
         </a>

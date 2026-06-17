@@ -9,13 +9,13 @@ import {
 } from '@/components/ui/accordion';
 
 const faqs = [
-  { q: 'What are your operating hours?', a: 'We are open Monday to Saturday from 6:00 AM to 10:00 PM, and Sunday from 7:00 AM to 2:00 PM.' },
+  { q: 'What are your operating hours?', a: 'We are open daily from 6:00 AM to 11:00 PM.' },
   { q: 'Do you offer a free trial?', a: 'Yes! We offer a free trial period. Fill out the form on this page to schedule your first session.' },
   { q: 'What equipment do you have?', a: 'We have state-of-the-art equipment including power racks, free weights, cable machines, treadmills, bikes, rowing machines, and functional training gear.' },
   { q: 'Do you provide personal training?', a: 'Absolutely. We have certified personal trainers available for one-on-one sessions. Our Pro and Elite plans include PT sessions.' },
   { q: 'Is there parking available?', a: 'Yes, we have dedicated parking space for our members.' },
   { q: 'Can I freeze my membership?', a: 'Yes, we offer flexible freeze options. Contact our team for details.' },
-  { q: 'Do you have a steam room?', a: 'Yes, we have a premium steam room available for Pro and Elite members.' },
+  { q: 'Do you have a ladies gym section?', a: 'Yes, we have a separate dedicated ladies gym section with specialized equipment and female trainers.' },
   { q: 'What safety measures are in place?', a: 'We maintain the highest standards of cleanliness. Our equipment is sanitized regularly, and the facility is well-ventilated.' },
 ];
 

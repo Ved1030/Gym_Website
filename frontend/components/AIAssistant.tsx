@@ -17,7 +17,7 @@ const suggestions = [
   'What are your gym timings?',
   'Where are you located?',
   'How can I book a free trial?',
-  'Do you have steam room facilities?',
+  'Do you have a ladies gym section?',
   'Can beginners join?',
   'What transformation programs do you offer?',
 ];
@@ -35,7 +35,7 @@ const CTA_KEYWORDS: Record<string, { label: string; action: string; href?: strin
   trainer: [{ label: '👨‍🏫 Meet Our Trainers', action: 'scroll', href: '#trainers' }],
   coach: [{ label: '👨‍🏫 Meet Our Trainers', action: 'scroll', href: '#trainers' }],
   'personal training': [{ label: '👨‍🏫 Meet Our Trainers', action: 'scroll', href: '#trainers' }],
-  steam: [{ label: '🔥 Tour Our Facilities', action: 'scroll', href: '#home' }],
+  'ladies gym': [{ label: '🏋️ Tour Our Facilities', action: 'scroll', href: '#home' }],
   beginner: [{ label: '🎯 Book Free Trial', action: 'scroll', href: '#trial' }],
 };
 
@@ -96,7 +96,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "👋 Welcome to Mythos Fitness! I'm your AI Coach. Ask me anything about memberships, fitness plans, trainers, timings, or free trials. I'm here to help! 💪",
+      content: "👋 Welcome to Evolve Fitness! I'm your AI Coach. Ask me anything about memberships, fitness plans, trainers, timings, location, free trials, weight loss programs, or personal training. I'm here to help! 💪",
       timestamp: new Date(),
     },
   ]);
@@ -232,7 +232,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
                       key={`${cta.label}::${cta.action}::${cta.href || ''}`}
                       onClick={() => {
                         if (cta.action === 'maps') {
-                          window.open('https://maps.google.com/?q=Mythos+Fitness+Ghatkopar+East+Mumbai', '_blank');
+                          window.open('https://maps.google.com/?q=Evolve+Fitness+Ghatkopar+West+Mumbai', '_blank');
                         } else if (cta.href) {
                           const el = document.querySelector(cta.href);
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -369,7 +369,7 @@ export default function AIAssistant() {
         className="relative group"
       >
         <motion.div
-          animate={{ boxShadow: ['0 0 20px rgba(255,59,59,0.3)', '0 0 40px rgba(255,59,59,0.5)', '0 0 20px rgba(255,59,59,0.3)'] }}
+           animate={{ boxShadow: ['0 0 20px rgba(255,215,0,0.3)', '0 0 40px rgba(255,215,0,0.5)', '0 0 20px rgba(255,215,0,0.3)'] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
         >
@@ -395,7 +395,7 @@ export default function AIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-48 sm:bottom-44 right-4 sm:right-8 z-40 w-[380px] max-w-[calc(100vw-32px)] h-[650px] max-h-[calc(100vh-208px)] bg-[#111111]/90 backdrop-blur-2xl border border-white/10 overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,0,0,0.2)] max-sm:w-[calc(100vw-32px)] max-sm:h-[calc(100vh-208px)]"
+            className="fixed bottom-48 sm:bottom-44 right-4 sm:right-8 z-40 w-[380px] max-w-[calc(100vw-32px)] h-[650px] max-h-[calc(100vh-208px)] bg-[#111111]/90 backdrop-blur-2xl border border-white/10 overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,215,0,0.2)] max-sm:w-[calc(100vw-32px)] max-sm:h-[calc(100vh-208px)]"
             style={{ borderRadius: '24px' }}
           >
             <ChatHeader />

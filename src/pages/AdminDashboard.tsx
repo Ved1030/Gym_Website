@@ -37,8 +37,8 @@ export default function AdminDashboard() {
             value={password} onChange={(e) => setPassword(e.target.value)}
             className="w-full h-12 px-4 rounded-xl bg-white/10 text-white border border-white/20"
           />
-          {error && <p className="text-red-400 text-sm">{error}</p>}
-          <button type="submit" className="w-full h-12 bg-red-600 rounded-xl font-semibold hover:bg-red-700">
+          {error && <p className="text-yellow-400 text-sm">{error}</p>}
+          <button type="submit" className="w-full h-12 bg-yellow-600 rounded-xl font-semibold text-black hover:bg-yellow-700">
             Login
           </button>
         </form>
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-black text-white p-8">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold"><span className="text-red-500">GLORIOUS</span> ADMIN</h1>
+        <h1 className="text-2xl font-bold"><span className="text-yellow-500">EVOLVE</span> ADMIN</h1>
         <button
           onClick={() => { localStorage.removeItem('admin_token'); setToken(null); }}
           className="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20"
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
           Logout
         </button>
       </div>
-      <p className="text-gray-400">Admin dashboard is available on the full site at <a href="http://localhost:3000/admin" className="text-red-400 underline">localhost:3000/admin</a></p>
+      <p className="text-gray-400">Admin dashboard is available on the full site at <a href="http://localhost:3000/admin" className="text-yellow-400 underline">localhost:3000/admin</a></p>
     </div>
   );
 }

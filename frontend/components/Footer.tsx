@@ -24,10 +24,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/mythosfitness' },
-    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/mythosfitness' },
-    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@mythosfitness' },
-    { name: 'X', icon: XIcon, href: 'https://x.com/mythosfitness' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/evolvefitness' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/evolvefitness' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@evolvefitness' },
+    { name: 'X', icon: XIcon, href: 'https://x.com/evolvefitness' },
   ];
 
   return (
@@ -38,13 +38,12 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <Dumbbell className="h-6 w-6 text-primary" />
               <span className="font-bold text-lg">
-                <span className="text-primary">MYTHOS</span>{' '}
+                <span className="text-primary">EVOLVE</span>{' '}
                 <span className="text-foreground/80">FITNESS</span>
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Mumbai&apos;s premium fitness destination. Transform your body, unlock your potential
-              with world-class trainers and equipment.
+               Transform. Strengthen. Evolve. Premium fitness destination in Ghatkopar West with expert trainers, state-of-the-art equipment, and personalized programs.
             </p>
           </div>
 
@@ -69,29 +68,29 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                <span>Ghatkopar East, Mumbai, Maharashtra</span>
+                <span>1st Floor, Doshi Wadi, 115 to 118, LBS Marg, Opp. Sarvodaya Bus Stop, Bhatwadi, Ghatkopar West, Mumbai, Maharashtra 400086</span>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919664509309"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4 text-primary shrink-0" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 96645 09309</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@mythosfitness.com"
+                  href="mailto:info@evolvefitness.in"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4 text-primary shrink-0" />
-                  <span>info@mythosfitness.com</span>
+                  <span>info@evolvefitness.in</span>
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                <span>Mon - Sat: 6:00 AM - 10:00 PM<br />Sun: 7:00 AM - 2:00 PM</span>
+                <span>Open Daily: 6:00 AM - 11:00 PM</span>
               </li>
             </ul>
           </div>
@@ -108,7 +107,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 rounded-[14px] bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-red-500/20 hover:text-white hover:scale-[1.08] hover:shadow-[0_0_20px_rgba(255,59,59,0.35)] transition-all duration-300"
+                  className="flex items-center justify-center w-12 h-12 rounded-[14px] bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-yellow-500/20 hover:text-white hover:scale-[1.08] hover:shadow-[0_0_20px_rgba(255,215,0,0.35)] transition-all duration-300"
                   aria-label={name}
                 >
                   <Icon size={20} />
@@ -120,7 +119,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Mythos Fitness. All rights reserved.
+            &copy; {new Date().getFullYear()} Evolve Fitness. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

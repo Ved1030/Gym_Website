@@ -67,7 +67,7 @@ export default function CinematicHero() {
         >
           <span
             className="text-xs sm:text-sm md:text-lg font-medium tracking-wider leading-none"
-            style={{ color: '#FF3B3B' }}
+            style={{ color: '#FFD700' }}
           >
             Ghatkopar&apos;s Premium Fitness Destination
           </span>
@@ -106,7 +106,7 @@ export default function CinematicHero() {
               Book Free Trial <ArrowRight className="h-5 w-5 shrink-0" />
             </button>
           </a>
-          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto max-w-[300px] sm:max-w-none">
+          <a href="https://wa.me/919664509309" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto max-w-[300px] sm:max-w-none">
             <button className="btn-ghost w-full sm:w-auto justify-center">
               <MessageCircle className="h-5 w-5 text-green-400 shrink-0" />
               WhatsApp Us

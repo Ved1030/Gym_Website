@@ -55,12 +55,12 @@ const facilities = [
   {
     id: 5,
     zone: 'ZONE 05',
-    name: 'Steam Recovery',
-    subtitle: 'Recharge. Recover. Repeat.',
+    name: 'Ladies Gym',
+    subtitle: 'Empower. Train. Transform.',
     description:
-      'Premium steam rooms, sauna facilities, and relaxation areas for post-workout recovery.',
+      'A separate dedicated section for women with specialized equipment and female trainers.',
     image:
-      'https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80&w=1200',
   },
 ];
 

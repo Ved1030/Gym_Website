@@ -6,7 +6,7 @@ import { Star, Quote } from 'lucide-react';
 const testimonials = [
   { name: 'Ananya Mehta', rating: 5, text: 'Absolutely love this gym! The trainers are incredibly knowledgeable and supportive. I\'ve seen amazing results in just 3 months.' },
   { name: 'Karan Desai', rating: 5, text: 'The best gym in Ghatkopar! State-of-the-art equipment, clean facilities, and expert trainers. Highly recommend.' },
-  { name: 'Ritu Agarwal', rating: 4, text: 'Great atmosphere and amazing community. The steam room is a bonus after a hard workout!' },
+  { name: 'Ritu Agarwal', rating: 4, text: 'Great atmosphere and amazing community. The group classes are fantastic and the trainers keep everyone motivated!' },
   { name: 'Siddharth Rao', rating: 5, text: 'Prashant and his team are truly dedicated. They don\'t just train you, they educate you about fitness.' },
   { name: 'Pooja Nair', rating: 5, text: 'Joined 6 months ago and it\'s been life-changing. The personalized attention sets this gym apart.' },
   { name: 'Arjun Kapadia', rating: 4, text: 'Excellent facilities and flexible timing options. Perfect for working professionals.' },

@@ -43,12 +43,12 @@ export default function AboutSection() {
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
             Why{' '}
-            <span className="text-gradient">Mythos Fitness</span>?
+            <span className="text-gradient">Evolve Fitness</span>?
           </h2>
           <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-            Founded by our expert team, Mythos Fitness is Ghatkopar East&apos;s premier
-            fitness destination. We combine world-class equipment with expert guidance
-            to help you achieve your fitness goals.
+            Evolve Fitness is a premium fitness destination in Ghatkopar West offering
+            state-of-the-art equipment, expert trainers, strength training, cardio workouts,
+            bodybuilding guidance, weight-loss programs, and a motivating workout environment.
           </p>
         </motion.div>
 

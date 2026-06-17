@@ -20,10 +20,10 @@ module.exports = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        red: {
-          500: "#ef4444",
-          600: "#dc2626",
-          700: "#b91c1c",
+        yellow: {
+          500: "#FFD700",
+          600: "#FFC107",
+          700: "#B8860B",
         }
       },
       keyframes: {

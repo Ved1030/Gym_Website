@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Mythos Fitness | Premium Gym in Ghatkopar East, Mumbai',
+  title: 'Evolve Fitness | Premium Gym in Ghatkopar West, Mumbai',
   description:
-    'Mumbai\'s premium fitness experience. Transform your body with expert trainers, state-of-the-art equipment, and personalized programs at Mythos Fitness in Ghatkopar East.',
+    'Transform. Strengthen. Evolve. Premium fitness destination in Ghatkopar West with expert trainers, state-of-the-art equipment, and personalized fitness programs at Evolve Fitness.',
   keywords: [
     'gym', 'fitness', 'Ghatkopar', 'Mumbai', 'personal training',
     'membership', 'transformation', 'strength training', 'cardio',

@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: 'Karan Desai',
     rating: 5,
-    text: 'The best gym in Ghatkopar! State-of-the-art equipment, incredibly clean facilities, and trainers who genuinely care about your progress. The steam room is a game-changer after intense workouts.',
+    text: 'The best gym in Ghatkopar! State-of-the-art equipment, incredibly clean facilities, and trainers who genuinely care about your progress. The dedicated ladies section is a fantastic addition.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
     achievement: 'Gained 8 kg lean muscle',
   },
@@ -159,26 +159,17 @@ export default function VideoTestimonials() {
           <div className="mt-12 glass rounded-2xl p-6">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">4.9</div>
+                <div className="text-3xl font-bold text-gradient">4.6</div>
                 <div className="flex gap-0.5 justify-center mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-xs text-muted-foreground mt-1">Google Reviews</p>
+                <p className="text-xs text-muted-foreground mt-1">Google Rating</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">4.8</div>
-                <div className="flex gap-0.5 justify-center mt-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">Cult.fit Reviews</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">103+</div>
-                <p className="text-xs text-muted-foreground mt-2">Total Reviews</p>
+                <div className="text-3xl font-bold text-gradient">137+</div>
+                <p className="text-xs text-muted-foreground mt-2">Reviews</p>
               </div>
             </div>
           </div>
