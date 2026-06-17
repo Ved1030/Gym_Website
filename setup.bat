@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo   Evolve Fitness - Project Setup
+echo   Gym Mantra Fitness Studio - Setup
 echo ========================================
 echo.
 
@@ -50,7 +50,7 @@ echo.
 echo   Admin Login:
 echo     First run: cd backend ^&^& npx prisma db push ^&^& npx tsx src/prisma/seed.ts
 echo     Then login at: http://localhost:3000/admin
-echo     Email: admin@evolvefitness.in
+echo     Email: admin@gymmantrafitness.in
 echo     Password: admin123
 echo.
 pause
