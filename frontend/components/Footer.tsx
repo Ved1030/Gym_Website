@@ -1,6 +1,6 @@
 'use client';
 
-import { Dumbbell, MapPin, Phone, Mail, Clock, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Dumbbell, MapPin, Clock, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const XIcon = ({ size, className }: { size?: number; className?: string }) => (
   <svg
@@ -24,10 +24,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/gymmantrafitness' },
-    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/gymmantrafitness' },
-    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@gymmantrafitness' },
-    { name: 'X', icon: XIcon, href: 'https://x.com/gymmantrafitness' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/mythosfitness' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/mythosfitness' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@mythosfitness' },
+    { name: 'X', icon: XIcon, href: 'https://x.com/mythosfitness' },
   ];
 
   return (
@@ -38,12 +38,12 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <Dumbbell className="h-6 w-6 text-primary" />
               <span className="font-bold text-lg">
-                <span className="text-primary">GYM MANTRA</span>{' '}
+                <span className="text-primary">MYTHOS</span>{' '}
                 <span className="text-foreground/80">FITNESS</span>
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-               Transform Your Body. Transform Your Life. Premium fitness studio in Ghatkopar West with certified trainers, modern equipment, and personalized programs.
+               Transform Your Body. Transform Your Life. Premium fitness center in Ghatkopar East with certified trainers, premium equipment, CrossFit training, and personalized programs.
             </p>
           </div>
 
@@ -68,29 +68,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                <span>Shop No. 2, Plot No. 2, 589, Raj Rajeshwari Society, Landmark - Bisleri Company, Building Road, Opp. Akashdyam Building, Narayan Nagar, Ghatkopar West, Mumbai, Maharashtra 400086</span>
-              </li>
-              <li>
-                <a
-                  href="tel:+919179797197"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Phone className="h-4 w-4 text-primary shrink-0" />
-                  <span>+91 91797 97197</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@gymmantrafitness.in"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Mail className="h-4 w-4 text-primary shrink-0" />
-                  <span>info@gymmantrafitness.in</span>
-                </a>
+                <span>N/R Brahmin Samaj Hall, Pranay Sudarshan A Wing, Joshi Lane, Ghatkopar East, Mumbai, Maharashtra 400077</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                 <span>Mon-Sat: 6:00 AM - 1:00 PM & 4:00 PM - 11:00 PM</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                <span>Contact us for membership details</span>
               </li>
             </ul>
           </div>
@@ -119,7 +105,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Gym Mantra Fitness Studio. All rights reserved.
+            &copy; {new Date().getFullYear()} Mythos Fitness. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

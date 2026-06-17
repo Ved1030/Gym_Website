@@ -27,7 +27,7 @@ export default function PageLoader() {
         transition={{ delay: 0.5 }}
         className="mt-4 text-sm text-muted-foreground tracking-widest uppercase"
       >
-        Gym Mantra Fitness Studio
+        Mythos Fitness
       </motion.p>
     </motion.div>
   );

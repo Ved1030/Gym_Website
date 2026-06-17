@@ -43,7 +43,7 @@ export default function TrialSection() {
             </div>
             <h3 className="text-2xl font-bold mb-2">You&apos;re In!</h3>
             <p className="text-muted-foreground mb-6">
-              Welcome to Gym Mantra Fitness Studio! We&apos;ll contact you shortly to schedule your free trial session.
+              Welcome to Mythos Fitness! We&apos;ll contact you shortly to schedule your free trial session.
             </p>
             <Button onClick={() => setSuccess(false)} variant="outline">
               Register Another

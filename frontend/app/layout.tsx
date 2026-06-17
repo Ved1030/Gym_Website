@@ -8,11 +8,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const siteUrl = 'https://gymmantrafitness.in';
-const siteName = 'Gym Mantra Fitness Studio';
-const title = 'Gym Mantra Fitness Studio | Best Gym in Ghatkopar West Mumbai';
+const siteUrl = 'https://mythosfitness.in';
+const siteName = 'Mythos Fitness';
+const title = 'Mythos Fitness | Premium Fitness Center in Ghatkopar East Mumbai';
 const description =
-  'Join Gym Mantra Fitness Studio in Ghatkopar West. Premium fitness center with expert trainers, modern equipment, personal training, weight loss programs, and muscle building programs.';
+  'Join Mythos Fitness in Ghatkopar East. Certified trainers, premium equipment, CrossFit area, personal training, strength programs, and fitness coaching.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   keywords: [
     'gym', 'fitness', 'Ghatkopar', 'Mumbai', 'personal training',
     'membership', 'transformation', 'strength training', 'cardio',
-    'Gym Mantra', 'weight loss', 'muscle gain', 'fitness studio',
-    'premium gym', 'certified trainers', 'hi-tech equipment',
+    'Mythos Fitness', 'weight loss', 'muscle gain', 'CrossFit',
+    'premium gym', 'certified trainers', 'premium equipment',
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Gym Mantra Fitness Studio - Best Gym in Ghatkopar West Mumbai',
+        alt: 'Mythos Fitness - Premium Fitness Center in Ghatkopar East Mumbai',
       },
     ],
   },
@@ -70,23 +70,22 @@ const jsonLd = {
   '@type': 'HealthClub',
   name: siteName,
   description:
-    'Premium fitness studio in Ghatkopar West with certified trainers, modern equipment, personal training, weight loss programs, and muscle gain programs.',
+    'Premium fitness center in Ghatkopar East with certified trainers, premium equipment, CrossFit area, personal training, strength programs, and weight management programs.',
   url: siteUrl,
-  telephone: '+91 91797 97197',
   address: {
     '@type': 'PostalAddress',
     streetAddress:
-      'Shop No. 2, Plot No. 2, 589, Raj Rajeshwari Society, Landmark - Bisleri Company, Building Road, Opp. Akashdyam Building, Narayan Nagar',
-    addressLocality: 'Ghatkopar West',
+      'N/R Brahmin Samaj Hall, Pranay Sudarshan A Wing, Joshi Lane',
+    addressLocality: 'Ghatkopar East',
     addressRegion: 'Mumbai',
     addressCountry: 'IN',
-    postalCode: '400086',
+    postalCode: '400077',
   },
   openingHours: 'Mo-Sa 06:00-13:00,16:00-23:00',
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '157',
+    ratingValue: '4.8',
+    reviewCount: '20',
   },
 };
 

@@ -25,7 +25,7 @@ export default function Loading() {
           style={{ width: `${progress}%` }}
         />
       </div>
-      <p className="mt-4 text-sm text-muted-foreground">Loading Gym Mantra Fitness Studio...</p>
+      <p className="mt-4 text-sm text-muted-foreground">Loading Mythos Fitness...</p>
     </div>
   );
 }

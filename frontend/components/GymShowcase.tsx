@@ -15,32 +15,32 @@ const facilities = [
   {
     id: 1,
     zone: 'ZONE 01',
-    name: 'Strength Zone',
+    name: 'Strength Training',
     subtitle: 'Power. Performance. Progress.',
     description:
-      'Heavy free weights, squat racks, deadlift platforms, bench press areas, and professional strength athletes.',
+      'Heavy free weights, squat racks, deadlift platforms, bench press areas, and premium strength training equipment.',
     image:
       'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 2,
     zone: 'ZONE 02',
-    name: 'Cardio Arena',
-    subtitle: 'Endless Energy. Maximum Burn.',
+    name: 'CrossFit Arena',
+    subtitle: 'Train Like an Athlete.',
     description:
-      'Premium treadmills, cross trainers, stationary bikes, and cutting-edge cardio machines.',
+      'Dedicated CrossFit area with rigs, battle ropes, plyometric boxes, kettlebells, and functional training equipment.',
     image:
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 3,
     zone: 'ZONE 03',
-    name: 'Functional Training',
-    subtitle: 'Move Better. Feel Stronger.',
+    name: 'Cardio Zone',
+    subtitle: 'Endless Energy. Maximum Burn.',
     description:
-      'Battle ropes, kettlebells, TRX suspension, agility training equipment, and open training area.',
+      'Premium treadmills, cross trainers, stationary bikes, rowing machines, and cutting-edge cardio equipment.',
     image:
-      'https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 4,
@@ -48,17 +48,17 @@ const facilities = [
     name: 'Personal Training',
     subtitle: 'Expert Guidance. Real Results.',
     description:
-      'One-on-one coaching with certified trainers, custom programs, and dedicated support.',
+      'One-on-one coaching with certified trainers, custom programs, and dedicated support for your fitness journey.',
     image:
       'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=1200',
   },
   {
     id: 5,
     zone: 'ZONE 05',
-    name: 'Ladies Gym',
-    subtitle: 'Empower. Train. Transform.',
+    name: 'Recovery & Mobility',
+    subtitle: 'Rest. Recover. Recharge.',
     description:
-      'A separate dedicated section for women with specialized equipment and female trainers.',
+      'Dedicated stretching area, foam rollers, mobility tools, and recovery equipment for post-workout regeneration.',
     image:
       'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80&w=1200',
   },

@@ -142,7 +142,7 @@ export default function AdminPage() {
           className="glass rounded-2xl p-8 w-full max-w-sm"
         >
           <h1 className="text-2xl font-bold text-center mb-2">Admin Login</h1>
-          <p className="text-sm text-muted-foreground text-center mb-6">Gym Mantra Fitness Studio Dashboard</p>
+          <p className="text-sm text-muted-foreground text-center mb-6">Mythos Fitness Dashboard</p>
           <form onSubmit={login} className="space-y-4">
             <Input
               type="email" placeholder="Email" required

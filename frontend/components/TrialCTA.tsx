@@ -38,7 +38,7 @@ export default function TrialCTA() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 text-green-400 mb-4">
               <Check className="h-8 w-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Welcome to Gym Mantra Fitness Studio!</h3>
+            <h3 className="text-2xl font-bold mb-2">Welcome to Mythos Fitness!</h3>
             <p className="text-muted-foreground mb-6">
               We&apos;ll contact you shortly to schedule your free trial session.
             </p>

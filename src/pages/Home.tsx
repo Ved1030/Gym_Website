@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex items-center gap-3 mb-6">
         <Dumbbell className="h-10 w-10 text-red-500" />
         <span className="text-4xl font-bold tracking-tight">
-          <span className="text-red-500">GYM MANTRA</span>{' '}
+          <span className="text-red-500">MYTHOS</span>{' '}
           <span className="text-white/80">FITNESS</span>
         </span>
       </div>

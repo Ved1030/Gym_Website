@@ -11,18 +11,18 @@ const highlights = [
   },
   {
     icon: Target,
-    title: 'Hi-Tech Equipment',
-    description: 'Latest fitness machines and equipment for effective workouts.',
+    title: 'Premium Equipment',
+    description: 'State-of-the-art fitness machines and CrossFit equipment for effective workouts.',
   },
   {
     icon: Users,
-    title: 'Beginner Friendly',
-    description: 'Welcoming atmosphere perfect for fitness beginners.',
+    title: 'CrossFit Area',
+    description: 'Dedicated CrossFit arena with specialized training equipment and programs.',
   },
   {
     icon: Trophy,
-    title: 'Premium Experience',
-    description: 'Air-conditioned facility with Dolby surround sound system.',
+    title: 'Air-Conditioned',
+    description: 'Fully air-conditioned facility with a motivating and comfortable environment.',
   },
 ];
 
@@ -43,12 +43,10 @@ export default function AboutSection() {
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
             Why{' '}
-            <span className="text-gradient">Gym Mantra</span>?
+            <span className="text-gradient">Mythos Fitness</span>?
           </h2>
           <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-            Gym Mantra Fitness Studio is one of the highest-rated fitness centers in Ghatkopar West
-            with a 4.9-star rating and 157+ reviews. We offer certified trainers, hi-tech equipment,
-            latest cardio machines, and a fully air-conditioned premium fitness experience.
+            Mythos Fitness is a premium fitness center in Ghatkopar East designed to help individuals achieve their fitness goals through expert coaching, modern equipment, and a motivating atmosphere. Known for our certified trainers, premium equipment, CrossFit area, and air-conditioned facilities.
           </p>
         </motion.div>
 

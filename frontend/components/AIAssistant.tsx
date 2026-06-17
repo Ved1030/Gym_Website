@@ -18,7 +18,7 @@ const suggestions = [
   'Where are you located?',
   'How can I book a free trial?',
   'Do you offer weight loss programs?',
-  'Can beginners join?',
+  'Do you have CrossFit training?',
   'What muscle gain programs do you offer?',
 ];
 
@@ -96,7 +96,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "👋 Welcome to Gym Mantra Fitness Studio! I'm your AI Coach. Ask me anything about memberships, fitness plans, trainers, timings, location, free trials, weight loss programs, or personal training. I'm here to help! 💪",
+      content: "👋 Welcome to Mythos Fitness! I'm your AI Coach. Ask me anything about memberships, gym timings, facilities, personal training, weight loss, muscle gain, CrossFit training, location, or contact details. I'm here to help! 💪",
       timestamp: new Date(),
     },
   ]);
@@ -232,7 +232,7 @@ export function ChatPanel({ embedded, onClose }: ChatPanelProps) {
                       key={`${cta.label}::${cta.action}::${cta.href || ''}`}
                       onClick={() => {
                         if (cta.action === 'maps') {
-                          window.open('https://maps.google.com/?q=Gym+Mantra+Fitness+Studio+Ghatkopar+West+Mumbai', '_blank');
+                          window.open('https://maps.google.com/?q=Mythos+Fitness+Ghatkopar+East+Mumbai', '_blank');
                         } else if (cta.href) {
                           const el = document.querySelector(cta.href);
                           if (el) el.scrollIntoView({ behavior: 'smooth' });

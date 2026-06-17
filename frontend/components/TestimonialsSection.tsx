@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Rahul Mehta', rating: 5, text: 'Excellent experience for beginners. Certified trainers, advanced equipment, and a motivating atmosphere make workouts enjoyable and effective.' },
-  { name: 'Priya Sharma', rating: 5, text: 'A great place to stay fit and healthy. The trainers are knowledgeable, professional, and provide personalized guidance based on individual goals.' },
-  { name: 'Amit Patel', rating: 5, text: 'Friendly atmosphere, modern equipment, fully air-conditioned facilities, and experienced trainers. One of the best fitness studios in Ghatkopar.' },
-  { name: 'Neha Desai', rating: 5, text: 'Professional environment with quality training. The equipment is updated regularly and the coaching is excellent.' },
+  { name: 'Rahul Mehta', rating: 5, text: 'The trainers are highly professional, supportive, and truly care about your fitness journey.' },
+  { name: 'Priya Sharma', rating: 5, text: 'Best equipment, certified trainers, and an amazing CrossFit area. The vibe is energetic and motivating.' },
+  { name: 'Amit Patel', rating: 5, text: 'Air-conditioned and well-maintained facilities with friendly staff and excellent workout environment.' },
+  { name: 'Neha Desai', rating: 5, text: 'One of the best fitness centers in Ghatkopar East with premium equipment and expert coaching.' },
   { name: 'Vikram Joshi', rating: 5, text: 'The personalized attention from the trainers here is unmatched. They genuinely care about your progress and fitness journey.' },
   { name: 'Sneha Kapoor', rating: 4, text: 'Great facility with a welcoming atmosphere. The trainers are supportive and help you stay motivated throughout your fitness journey.' },
 ];

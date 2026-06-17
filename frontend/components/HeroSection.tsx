@@ -6,8 +6,8 @@ import { ArrowRight, Play, Star, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const stats = [
-  { icon: Star, value: '157+', label: 'Reviews' },
-  { icon: Star, value: '4.9', label: 'Rating' },
+  { icon: Star, value: '20+', label: 'Reviews' },
+  { icon: Star, value: '4.8', label: 'Rating' },
   { icon: Award, value: '500+', label: 'Transformations' },
   { icon: Shield, value: 'Premium', label: 'Equipment' },
 ];
@@ -44,7 +44,7 @@ export default function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-medium text-primary mb-6">
               <Play className="h-3 w-3 fill-primary" />
-              Ghatkopar&apos;s Premium Fitness Studio
+              Ghatkopar East&apos;s Premium Fitness Destination
             </span>
           </motion.div>
 
@@ -67,8 +67,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed"
           >
-            Experience certified training, modern equipment, and a motivating atmosphere at
-            Ghatkopar West&apos;s highest-rated fitness studio.
+            Experience world-class training with certified trainers, premium equipment, CrossFit facilities, and a motivating fitness environment at Mythos Fitness.
           </motion.p>
 
           <motion.div

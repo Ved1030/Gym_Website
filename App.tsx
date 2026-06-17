@@ -18,7 +18,7 @@ const App: React.FC = () => {
             <div className="h-screen w-full flex items-center justify-center bg-black">
               <div className="flex flex-col items-center gap-4">
                 <div className="text-3xl font-bold font-serif tracking-tighter">
-                  GYM MANTRA <span className="text-red-600">FITNESS</span>
+                  MYTHOS <span className="text-red-600">FITNESS</span>
                 </div>
                 <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
                   <div className="h-full bg-red-600 animate-[loading_1.5s_ease-in-out_infinite]" />

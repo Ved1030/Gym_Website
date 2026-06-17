@@ -6,10 +6,10 @@ import { ArrowRight, MessageCircle, Star, Award, Clock } from 'lucide-react';
 import Counter from './Counter';
 
 const stats = [
-  { icon: Star, value: 157, suffix: '+', label: 'Reviews' },
-  { icon: Star, value: 4.9, suffix: '', label: 'Rating', decimals: 1 },
+  { icon: Star, value: 20, suffix: '+', label: 'Reviews' },
+  { icon: Star, value: 4.8, suffix: '', label: 'Rating', decimals: 1 },
   { icon: Award, value: 500, suffix: '+', label: 'Transform.' },
-  { icon: Clock, value: 10, suffix: '+', label: 'Experience' },
+  { icon: Clock, value: 8, suffix: '+', label: 'Experience' },
 ];
 
 export default function CinematicHero() {
@@ -69,7 +69,7 @@ export default function CinematicHero() {
             className="text-xs sm:text-sm md:text-lg font-medium tracking-wider leading-none"
             style={{ color: '#DC2626' }}
           >
-            Ghatkopar&apos;s Premium Fitness Destination
+            Ghatkopar East&apos;s Premium Fitness Destination
           </span>
         </motion.div>
 
@@ -91,8 +91,7 @@ export default function CinematicHero() {
           className="mt-2 sm:mt-3 md:mt-6 text-sm sm:text-base md:text-lg lg:text-[22px] font-normal leading-[1.6] sm:leading-[1.6] md:leading-[1.7] max-w-full sm:max-w-[650px]"
           style={{ color: 'rgba(255,255,255,0.75)' }}
         >
-           Experience certified training, modern equipment, and a motivating atmosphere at
-            Ghatkopar West&apos;s highest-rated fitness studio.
+            Experience world-class training with certified trainers, premium equipment, CrossFit facilities, and a motivating fitness environment at Mythos Fitness.
         </motion.p>
 
         <motion.div

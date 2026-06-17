@@ -8,28 +8,28 @@ const testimonials = [
   {
     name: 'Rahul Mehta',
     rating: 5,
-    text: 'Excellent experience for beginners. Certified trainers, advanced equipment, and a motivating atmosphere make workouts enjoyable and effective. I\'ve seen amazing results in just 3 months.',
+    text: 'The trainers are highly professional, supportive, and truly care about your fitness journey. I\'ve seen amazing results in just 3 months.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
     achievement: 'Lost 15 kg in 4 months',
   },
   {
     name: 'Priya Sharma',
     rating: 5,
-    text: 'A great place to stay fit and healthy. The trainers are knowledgeable, professional, and provide personalized guidance based on individual goals. Highly recommended!',
+    text: 'Best equipment, certified trainers, and an amazing CrossFit area. The vibe is energetic and motivating. Highly recommended!',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
     achievement: 'Lost 10 kg in 3 months',
   },
   {
     name: 'Amit Patel',
     rating: 5,
-    text: 'Friendly atmosphere, modern equipment, fully air-conditioned facilities, and experienced trainers. One of the best fitness studios in Ghatkopar.',
+    text: 'Air-conditioned and well-maintained facilities with friendly staff and excellent workout environment. One of the best in Ghatkopar East.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
-    achievement: 'Member since 2023',
+    achievement: 'Member since 2024',
   },
   {
     name: 'Neha Desai',
     rating: 5,
-    text: 'Professional environment with quality training. The equipment is updated regularly and the coaching is excellent. Truly a premium fitness experience.',
+    text: 'One of the best fitness centers in Ghatkopar East with premium equipment and expert coaching. Truly a premium fitness experience.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
     achievement: 'Gained 6 kg lean muscle',
   },
@@ -159,7 +159,7 @@ export default function VideoTestimonials() {
           <div className="mt-12 glass rounded-2xl p-6">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">4.9</div>
+                <div className="text-3xl font-bold text-gradient">4.8</div>
                 <div className="flex gap-0.5 justify-center mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 text-red-500 fill-red-500" />
@@ -168,7 +168,7 @@ export default function VideoTestimonials() {
                 <p className="text-xs text-muted-foreground mt-1">Google Rating</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gradient">157+</div>
+                <div className="text-3xl font-bold text-gradient">20+</div>
                 <p className="text-xs text-muted-foreground mt-2">Reviews</p>
               </div>
             </div>
